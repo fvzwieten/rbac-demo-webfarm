@@ -27,5 +27,6 @@
   mysql_user:
    - name {{ dbuser }}
    - password {{ upassword }}
-   - priv *.*:ALL host='%'
+   - priv *.*:ALL
+   - host '%'
    - state present
