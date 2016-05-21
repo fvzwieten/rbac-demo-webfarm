@@ -1,0 +1,12 @@
+[webservers]
+webserver1.lab1.local
+webserver2.lab1.local
+
+[lbservers]
+lbserver.lab1.local
+
+[dbservers]
+dbserver.lab1.local
+
+[monitoring]
+nagios.lab1.local
