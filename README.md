@@ -33,7 +33,7 @@ inventory file, grouped by their purpose:
 
 After which we execute the following command to deploy the site:
 
-		ansible-playbook -i hosts site.yml
+		ansible-playbook -i hosts deploy.yml
 
 The deployment can be verified by accessing the IP address of your load
 balancer host in a web browser: http://<ip-of-lb>:8888. Reloading the page
@@ -48,7 +48,7 @@ The default username and password are "nagiosadmin" / "nagiosadmin".
 Removal and addition of nodes to the cluster is as simple as editing the
 hosts inventory and re-running:
 
-        ansible-playbook -i hosts site.yml
+        ansible-playbook -i hosts deploy.yml
 
 ### Rolling Update
 
@@ -66,7 +66,7 @@ Once the code has been updated in the source repository for your application
 which can be defined in the group_vars/all file, execute the following
 command:
 
-	 ansible-playbook -i hosts rolling_update.yml
+	 ansible-playbook -i hosts update.yml
 
 You can optionally pass: -e webapp_version=xxx to the rolling_update
 playbook to specify a specific version of the example webapp to deploy.
