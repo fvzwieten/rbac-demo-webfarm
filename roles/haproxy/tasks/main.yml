@@ -10,6 +10,7 @@
 
 - name: Confirure firewall for access
   firewalld: permanent=yes service=http state=enabled immediate=yes
+  firewalld: permanent=yes port=8080/tcp state=enabled immediate=yes
 
 - name: Configure the haproxy cnf file with hosts
   template: src=haproxy.cfg.j2 dest=/etc/haproxy/haproxy.cfg
