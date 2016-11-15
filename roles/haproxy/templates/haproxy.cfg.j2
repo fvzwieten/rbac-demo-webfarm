@@ -37,3 +37,12 @@ backend app
     {% for host in groups['webservers'] %}
         server {{ host }} {{ hostvars[host]['ansible_' + iface].ipv4.address }}:{{ httpd_port }}
     {% endfor %}
+    
+    
+listen stats :8080
+    mode http
+    stats enable
+    stats hide-version
+    stats realm Haproxy\ Statistics
+    stats uri /
+    stats auth fred:redhat
