@@ -1,0 +1,9 @@
+# Configure and deploy the Nagios monitoring node(s).
+- hosts: monitoring
+
+  roles:
+  - base-apache
+  - nagios
+
+  tags:
+- monitoring
