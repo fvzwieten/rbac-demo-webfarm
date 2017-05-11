@@ -1,5 +1,5 @@
 ---
-- hosts: webservers
+- hosts: "{{ 'webservers' }}"
 
 # refresh git repo to webservers
 - name: Copy the code from repository
