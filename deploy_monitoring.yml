@@ -6,4 +6,4 @@
   - nagios
 
   tags:
-- monitoring
+  - monitoring
