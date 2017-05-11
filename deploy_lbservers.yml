@@ -1,4 +1,8 @@
 # Configure and deploy the load balancer(s).
+- hosts: webservers
+  name: Gather facts from webservers
+  tasks: [ ]
+
 - hosts: lbservers
 
   roles:
