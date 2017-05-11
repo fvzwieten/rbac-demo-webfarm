@@ -22,7 +22,6 @@
     delegate_to: "{{ item }}"
     with_items: "{{ groups['monitoring'] }}"
 
-  
   - name: disable the server in haproxy
     shell: echo="disable server myapplb/{{ inventory_hostname }}" | socat stdio /var/lib/haproxy/stats
     debug: "disable server myapplb/{{ inventory_hostname }}"
