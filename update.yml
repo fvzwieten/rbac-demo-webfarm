@@ -38,7 +38,7 @@
     wait_for: host={{ inventory_hostname }} port=80 state=started timeout=80
     
   - name: sleep for demo purposes
-    pause: seconds=30
+    pause: seconds=15
 
   - name: Enable the server in haproxy
     shell: echo "enable server myapplb/{{ inventory_hostname }}" | socat stdio /var/lib/haproxy/stats
