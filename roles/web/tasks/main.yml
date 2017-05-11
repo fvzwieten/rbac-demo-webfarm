@@ -20,5 +20,3 @@
 - name: Configure firewall for access
   firewalld: permanent=yes service=http state=enabled immediate=yes
 
-- name: Copy the code from repository
-  git: repo={{ repository }} version={{ webapp_version }} dest=/var/www/html/
