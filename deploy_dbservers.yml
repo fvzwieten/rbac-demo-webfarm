@@ -1,0 +1,8 @@
+# Configure and deploy database servers.
+- hosts: dbservers
+
+  roles:
+  - db
+
+  tags:
+  - db
