@@ -2,8 +2,8 @@
 # This role will install MySQL and create db user and give permissions.
 
 - name: Install Mysql package
-#  yum: name={{ item }} state=present
-  yum: name={{ item }} state=present disablerepo=epel
+  yum: name={{ item }} state=present
+# yum: name={{ item }} state=present disablerepo=epel
   with_items:
    - mariadb-server
    - MySQL-python
