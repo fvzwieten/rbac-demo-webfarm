@@ -43,8 +43,8 @@
 - name: FIXME set selinux in permissive mode
   selinux: policy=targeted state=permissive
 
-#- name: Configure firewall for access
-#  firewalld: permanent=yes service=http state=enabled immediate=yes
-#
+- name: Configure firewall for access
+  firewalld: permanent=yes service=http state=enabled immediate=yes
+
 - name: start nagios
   service: name=nagios state=started enabled=yes
