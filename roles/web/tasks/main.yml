@@ -17,6 +17,6 @@
   seboolean: name=httpd_can_network_connect_db state=true persistent=yes
   when: sestatus.rc != 0
 
-- name: Configure firewall for access
-  firewalld: permanent=yes service=http state=enabled immediate=yes
+#- name: Configure firewall for access
+#  firewalld: permanent=yes service=http state=enabled immediate=yes
 
