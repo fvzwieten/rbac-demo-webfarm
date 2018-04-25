@@ -19,4 +19,5 @@
 
 - name: Configure firewall for access
   firewalld: permanent=yes service=http state=enabled immediate=yes
+  tags: fw
 
