@@ -45,6 +45,7 @@
 
 - name: Configure firewall for access
   firewalld: permanent=yes service=http state=enabled immediate=yes
+  tags: fw
 
 - name: start nagios
   service: name=nagios state=started enabled=yes
