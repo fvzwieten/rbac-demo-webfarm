@@ -10,11 +10,11 @@
 
 - name: Confirure firewall for access to website
   firewalld: permanent=yes service=http  state=enabled immediate=yes
-  tag: fw
+  tags: fw
 
 - name: Configure firewall for access to stats page
   firewalld: permanent=yes port=8080/tcp state=enabled immediate=yes
-  tag: fw
+  tags: fw
 
 - name: Configure the haproxy cnf file with hosts
   template: src=haproxy.cfg.j2 dest=/etc/haproxy/haproxy.cfg
