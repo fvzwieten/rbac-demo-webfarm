@@ -38,6 +38,7 @@
 
 - name: Start the firewalld service
   service: name=firewalld state=started enabled=true
+  tags: fw
 
 - name: test to see if selinux is running
   command: getenforce
