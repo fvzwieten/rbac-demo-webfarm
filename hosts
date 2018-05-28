@@ -1,12 +1,12 @@
 [webservers]
-webserver1.lab1.local
-webserver2.lab1.local
-
-[lbservers]
-lbserver.lab1.local
+webserver1.lab1.example
+webserver2.lab1.example
 
 [dbservers]
-dbserver.lab1.local
+dbserver.lab1.example
+
+[lbservers]
+lbserver.lab1.example
 
 [monitoring]
-nagios.lab1.local
+monitor.lab1.example
