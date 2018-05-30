@@ -7,7 +7,7 @@
    - php
    - php-mysql
    - git
-  service: name=httpd state=reloaded
+  service: name=httpd state=restarted
 
 - name: test to see if selinux is running
   command: getenforce
