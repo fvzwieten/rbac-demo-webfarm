@@ -2,4 +2,6 @@
 # Handlers for common notifications
 
 - name: restart ntp
-  service: name=ntpd state=restarted
+  service:
+    name: ntpd
+    state: restarted
