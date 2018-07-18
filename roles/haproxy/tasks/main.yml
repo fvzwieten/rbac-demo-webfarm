@@ -2,20 +2,31 @@
 # This role installs HAProxy and configures it.
 
 - name: Download and install haproxy and socat
-  yum: name={{ item }} state=present
-  #  yum: name={{ item }} state=present
+  yum:
+    name: "{{ item }}"
+    state: present
   with_items:
   - haproxy
   - socat
 
 - name: Confirure firewall for access to website
-  firewalld: permanent=yes service=http  state=enabled immediate=yes
+  firewalld:
+    permanent: yes
+    service: http
+    state: enabled
+    immediate: yes
   tags: fw
 
 - name: Configure firewall for access to stats page
-  firewalld: permanent=yes port=8080/tcp state=enabled immediate=yes
+  firewalld:
+    permanent: yes
+    port: 8080/tcp
+    state: enabled
+    immediate: yes
   tags: fw
 
 - name: Configure the haproxy cnf file with hosts
-  template: src=haproxy.cfg.j2 dest=/etc/haproxy/haproxy.cfg
+  template:
+    src: haproxy.cfg.j2
+    dest: /etc/haproxy/haproxy.cfg
   notify: restart haproxy
