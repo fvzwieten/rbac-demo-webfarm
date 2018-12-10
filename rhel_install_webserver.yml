@@ -19,6 +19,10 @@
 
   - name: open up the firewall ports
     firewalld:
-      service: https
+      service: {{ item }}
       permanent: yes
+      immediate: yes
       state: enabled
+    with_items:
+      - http
+      - https
