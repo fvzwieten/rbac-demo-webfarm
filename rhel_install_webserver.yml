@@ -9,6 +9,7 @@
       name:
         - httpd
         - php
+        - git
       state: present
 
   - name: http service state
