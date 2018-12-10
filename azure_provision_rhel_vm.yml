@@ -9,6 +9,9 @@
     azure_subnet: "{{ vm_name }}"
     azure_virtual_machine: "{{ vm_name }}"
     azure_resource_group: "{{ vm_name }}"
+    azure_vars:
+        Project: "{{ project }}"
+        SLA: "{{ sla }}"
 
   tasks:
   - name: create Azure resource group
@@ -54,6 +57,7 @@
       open_ports: 22,80,443
       virtual_network_name: '{{azure_virtual_network}}'
       subnet_name: '{{azure_subnet}}'
+      tags: "{{ azure_tags }}"
 
   - name: Get Public IP
     azure_rm_publicipaddress_facts:
