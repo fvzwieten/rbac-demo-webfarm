@@ -12,6 +12,8 @@
     azure_tags:
         Project: "{{ project }}"
         SLA: "{{ sla }}"
+        Role: "{{ role }}"
+        Environment: "{{ env }}"
 
   tasks:
   - name: create Azure resource group
