@@ -6,11 +6,8 @@
 
   - name: Install http and php etc
     yum:
-      name: "{{ item }}"
+      name: [u'httpd', u'php']
       state: present
-    with_items:
-     - http
-     - php
 
   - name: http service state
     service:
