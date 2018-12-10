@@ -3,9 +3,9 @@
 - name: Update website
   hosts: Role_web_server
   vars:
-    repository: https://github.com/fvzwieten
-    customer: acme
-    webapp_version: master
+    repository: "https://github.com/fvzwieten/"
+    customer: "acme"
+    webapp_version: "master"
 
   tasks:
   - name: Copy the code from repository
