@@ -1,7 +1,7 @@
 ---
 # refresh git repo to webservers
 - name: Update website
-  hosts: Role_web_servers
+  hosts: Role_web_server
   vars:
     repository: https://github.com/fvzwieten
     customer: acme
