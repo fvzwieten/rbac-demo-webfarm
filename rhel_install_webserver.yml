@@ -22,5 +22,5 @@
       service:
         - http
         - https
-    permanent: yes
-    state: enabled
+      permanent: yes
+      state: enabled
