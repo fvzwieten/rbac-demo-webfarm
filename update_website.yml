@@ -5,7 +5,7 @@
   vars:
     repository: https://github.com/fvzwieten
     customer: acme
-    version: master
+    webapp_version: master
 
   tasks:
   - name: Copy the code from repository
