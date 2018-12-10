@@ -19,7 +19,7 @@
 
   - name: open up the firewall ports
     firewalld:
-      service: {{ item }}
+      service: "{{ item }}"
       permanent: yes
       immediate: yes
       state: enabled
