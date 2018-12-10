@@ -43,10 +43,10 @@
       admin_password: '{{admin_password}}'
       os_type: Linux
       image:
-        offer: RHEL
-        publisher: RedHat
-        sku: 7.6
-        version: latest
+        offer: "RHEL"
+        publisher: "RedHat"
+        sku: "7.6"
+        version: "latest"
       name: '{{ azure_virtual_machine }}'
       resource_group: '{{azure_resource_group}}'
       state: present
