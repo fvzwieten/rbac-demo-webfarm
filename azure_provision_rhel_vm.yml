@@ -45,8 +45,8 @@
       image:
         offer: "RHEL"
         publisher: "RedHat"
-        sku: "7.3"
-        version: "7.3.2017032021"
+        sku: "7-RAW"
+        version: "latest"
       name: '{{ azure_virtual_machine }}'
       resource_group: '{{azure_resource_group}}'
       state: present
