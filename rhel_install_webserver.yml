@@ -1,5 +1,8 @@
 ---
-# This role installs httpd
+- name: install webserver
+  hosts: all
+
+tasks:
 
 - name: Install http and php etc
   yum:
