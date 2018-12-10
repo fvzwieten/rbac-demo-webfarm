@@ -9,7 +9,7 @@
     azure_subnet: "{{ vm_name }}"
     azure_virtual_machine: "{{ vm_name }}"
     azure_resource_group: "{{ vm_name }}"
-    azure_vars:
+    azure_tags:
         Project: "{{ project }}"
         SLA: "{{ sla }}"
 
