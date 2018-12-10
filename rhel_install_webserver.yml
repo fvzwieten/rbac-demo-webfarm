@@ -1,6 +1,6 @@
 ---
 - name: install webserver
-  hosts: all
+  hosts: web_server
 
   tasks:
 
