@@ -1,7 +1,7 @@
 ---
 # refresh git repo to webservers
 - name: Update website
-  hosts: "{{ 'webservers' }}"
+  hosts: Role_web_servers
 
   tasks:
   - name: Copy the code from repository
