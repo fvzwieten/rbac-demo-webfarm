@@ -6,7 +6,9 @@
 
   - name: Install http and php etc
     yum:
-      name: [u'httpd', u'php']
+      name:
+        - httpd
+        - php
       state: present
 
   - name: http service state
