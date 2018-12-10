@@ -19,8 +19,6 @@
 
   - name: open up the firewall ports
     firewalld:
-      service:
-        - http
-        - https
+      service: https
       permanent: yes
       state: enabled
