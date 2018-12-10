@@ -2,6 +2,8 @@
 # refresh git repo to webservers
 - name: Update website
   hosts: Role_web_servers
+  vars:
+    repository: 
 
   tasks:
   - name: Copy the code from repository
