@@ -3,8 +3,10 @@
 - name: Update website
   hosts: Role_web_servers
   vars:
-    repository: 
+    repository: https://github.com/fvzwieten
+    customer: acme
+    version: master
 
   tasks:
   - name: Copy the code from repository
-    git: repo={{ repository }}website_{{ CUSTOMER }}.git  version={{ webapp_version }} dest=/var/www/html/
+    git: repo={{ repository }}website_{{ customer }}.git  version={{ webapp_version }} dest=/var/www/html/
