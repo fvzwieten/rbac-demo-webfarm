@@ -1,6 +1,6 @@
 ---
 - name: create a mysql DB
-  hosts: all
+  hosts: dbservers
   tasks:
   - name: Create a new database with name 'bobdata'
     mysql_db:
