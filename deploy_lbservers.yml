@@ -1,10 +1,10 @@
 # Configure and deploy the load balancer(s).
-- hosts: webservers
+- hosts: role_webserver
   become: yes
   name: Gather facts from webservers
   tasks: [ ]
 
-- hosts: lbservers
+- hosts: role_lbserver
 
   roles:
   - haproxy
