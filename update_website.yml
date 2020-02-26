@@ -1,8 +1,8 @@
 ---
 # refresh git repo to webservers
 - name: Update website
-  hosts: Role_web_server
-  vars:
+  hosts: webserver
+vars:
     repository: "https://github.com/fvzwieten/"
     customer: "acme"
     webapp_version: "master"
