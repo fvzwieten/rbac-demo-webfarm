@@ -5,6 +5,7 @@
   tasks: [ ]
 
 - hosts: role_monserver
+  become: yes
 
   roles:
   - base-apache
