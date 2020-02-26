@@ -9,6 +9,7 @@
 
 # gather facts from monitoring nodes for iptables rules
 - hosts: "{{ 'monitoring' }}"
+  become: yes
   tasks: []
 
 - hosts: "{{ 'webservers' }}"
