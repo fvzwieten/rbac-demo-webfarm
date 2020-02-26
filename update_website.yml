@@ -11,5 +11,5 @@
   tasks:
   - name: Copy the code from repository
     git:
-      repo: "{{ repository }}website_{{ customer }}.git"
+      repo: "{{ repository }}/website_{{ customer }}.git"
       dest: /var/www/html/
