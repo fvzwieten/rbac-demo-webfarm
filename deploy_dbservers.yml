@@ -1,5 +1,6 @@
 # Configure and deploy database servers.
-- hosts: foreman_hostgroup_base_dev_dbserver
+- hosts: dbserver
+  become: yes
 
   roles:
   - db
