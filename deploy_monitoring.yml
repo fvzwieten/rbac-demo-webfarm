@@ -4,7 +4,7 @@
   name: Gather facts from all servers
   tasks: [ ]
 
-- hosts: monitoring
+- hosts: role_monitoring
 
   roles:
   - base-apache
