@@ -5,16 +5,22 @@
   yum:
     name: "{{ item }}"
     state: present
+    update_cache: yes
   with_items:
    - libselinux-python
    - libsemanage-python
 
-- name: install some useful nagios plugins
+- name: Install EPEL repository for Nagios plugins
+  yum:
+    name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm"
+    state: present
+
+- name: install nagios plugins
   yum:
     name: "{{ item }}"
     state: present
+    update_cache: yes
   with_items:
-   - https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
    - nagios-plugins-nrpe
    - nagios-plugins-swap
    - nagios-plugins-users
