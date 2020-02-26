@@ -36,13 +36,3 @@
 
   tags:
   - lb
-
-# Configure and deploy the Nagios monitoring node(s).
-- hosts: role_monserver
-
-  roles:
-  - base-apache
-  - nagios
-
-  tags:
-  - monintoring
