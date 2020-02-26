@@ -3,10 +3,6 @@
 - name: Update website
   hosts: role_webserver
   become: yes
-  vars:
-    repository: "https://github.com/fvzwieten/"
-    customer: "acme"
-    webapp_version: "master"
 
   tasks:
   - name: Copy the code from repository
