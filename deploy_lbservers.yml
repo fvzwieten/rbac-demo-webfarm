@@ -5,6 +5,7 @@
   tasks: [ ]
 
 - hosts: role_lbserver
+  become: yes
 
   roles:
   - haproxy
