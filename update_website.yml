@@ -1,12 +1,14 @@
 ---
-# refresh git repo to webservers
+# refresh website from git to webservers
 - name: Update website
-  hosts: webserver
-vars:
+  hosts: role_webserver
+  vars:
     repository: "https://github.com/fvzwieten/"
     customer: "acme"
     webapp_version: "master"
 
   tasks:
   - name: Copy the code from repository
-    git: repo={{ repository }}website_{{ customer }}.git  version={{ webapp_version }} dest=/var/www/html/
+    git:
+      repo: {{ repository }}website_{{ customer }}.git
+      dest: /var/www/html/
