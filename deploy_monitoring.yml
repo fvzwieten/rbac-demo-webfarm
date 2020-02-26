@@ -4,11 +4,11 @@
   name: Gather facts from all servers
   tasks: [ ]
 
-- hosts: role_monitoring
+- hosts: role_monserver
 
   roles:
   - base-apache
   - nagios
 
   tags:
-  - monitoring
+  - monserver
