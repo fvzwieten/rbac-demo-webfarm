@@ -1,5 +1,6 @@
 # Configure and deploy the Nagios monitoring node(s).
 - hosts: all
+  become: yes
   name: Gather facts from all servers
   tasks: [ ]
 
