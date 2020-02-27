@@ -9,29 +9,8 @@
    - libselinux-python
    - libsemanage-python
 
-#- name: Install ntp
-#  yum:
-#    name: ntp
-#    state: present
-#  tags: ntp
-
-#- name: Configure ntp file
-#  template:
-#    src: ntp.conf.j2
-#    dest: /etc/ntp.conf
-#  tags: ntp
-#  notify: restart ntp
-
-#- name: Start the ntp service
-#  service:
-#    name: ntpd
-#    state: started
-#    enabled: true
-#  tags: ntp
 - include_role:
     name: geerlingguy.ntp
-  vars:
-    ntp_timezone: Europe/Amsterdam
 
 - name: Start the firewalld service
   service:
