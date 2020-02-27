@@ -28,6 +28,11 @@
 #    state: started
 #    enabled: true
 #  tags: ntp
+- include_role:
+    name: geerlingguy.haproxy
+    vars:
+       - ntp_timezone: Europe/Amsterdam
+
 - geerlingguy.ntp
 
 - name: Start the firewalld service
