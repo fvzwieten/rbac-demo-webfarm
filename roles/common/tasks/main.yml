@@ -30,8 +30,8 @@
 #  tags: ntp
 - include_role:
     name: geerlingguy.ntp
-    vars:
-       - ntp_timezone: Europe/Amsterdam
+  vars:
+    ntp_timezone: Europe/Amsterdam
 
 - geerlingguy.ntp
 
