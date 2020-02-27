@@ -3,4 +3,4 @@
 
 httpd_port: 80
 #ntpserver: 192.168.1.2
-ntp_timezone: America/Chicago
+ntp_timezone: Europe/Amsterdam
