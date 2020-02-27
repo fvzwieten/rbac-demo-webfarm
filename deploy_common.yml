@@ -1,6 +1,6 @@
 ---
 # Apply common configuration to all hosts
-- hosts: all
+- hosts: "project_{{ project }}"
   become: yes
 
   roles:
