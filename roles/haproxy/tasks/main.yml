@@ -2,7 +2,7 @@
 # This role installs HAProxy and configures it.
 - name: get the stats credentials
   include_vars:
-    - secrets
+    file: secrets
   
 - name: Download and install haproxy and socat
   yum:
