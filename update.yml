@@ -15,7 +15,7 @@
   - name: disable the server in haproxy
     shell: echo "disable server myapplb/{{ inventory_hostname }}" | socat stdio /var/lib/haproxy/stats
     delegate_to: "{{ item }}"
-    with_items: "{{ groups['lbservers'] }}"
+    with_items: "{{ groups['lbserver'] }}"
 
   roles:
   - common
@@ -37,4 +37,4 @@
   - name: Enable the server in haproxy
     shell: echo "enable server myapplb/{{ inventory_hostname }}" | socat stdio /var/lib/haproxy/stats
     delegate_to: "{{ item }}"
-    with_items: "{{ groups['lbservers'] }}"
+    with_items: "{{ groups['lbserver'] }}"
