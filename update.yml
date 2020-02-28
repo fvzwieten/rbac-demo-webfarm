@@ -7,7 +7,7 @@
 # will be applied as part of the rolling update process.
 #
 
-- hosts: role_webservers
+- hosts: role_webserver
   serial: 1
 
   # These are the tasks to run before applying updates:
