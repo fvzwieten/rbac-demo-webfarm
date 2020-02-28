@@ -40,3 +40,7 @@
     shell: echo "enable server myapplb/{{ inventory_hostname }}" | socat stdio /var/lib/haproxy/stats
     delegate_to: "{{ item }}"
     with_items: "{{ groups['role_lbserver'] }}"
+    
+  - name: Give the loadbalancer some time to settle
+    pause: seconds=5
+
