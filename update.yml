@@ -7,7 +7,9 @@
 # will be applied as part of the rolling update process.
 #
 
-- hosts: role_webserver
+- name: update the server webfarm using a rolling update
+  hosts: role_webserver
+  become: yes
   serial: 1
 
   # These are the tasks to run before applying updates:
