@@ -1,12 +1,12 @@
 ---
-# This role contains common plays that will run on all nodes.
+# This role contains common plays that will run on all nodes
 
 - name: Refresh subscription data
   yum:
     name: "*"
     state: latest
-  disablerepo: "*"
-  enablerepo: "*microsoft*"
+    disablerepo: "*"
+    enablerepo: "*microsoft*"
   
 - name: Install python bindings for SE Linux
   yum:
