@@ -1,4 +1,0 @@
----
-roles:
-  - name: geerlingguy.ntp
-    source: https://galaxy.ansible.com
