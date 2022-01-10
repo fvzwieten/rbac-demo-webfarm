@@ -1,3 +1,2 @@
 # Install ntp role from the Ansible Galaxy
-roles:
-  - name: geerlingguy.ntp
+name: geerlingguy.ntp
