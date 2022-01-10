@@ -17,7 +17,7 @@
    - libsemanage-python
 
 - include_role:
-    name: geerlingguy.ntp
+    name: redhat.rhel_system_roles.timesync
 
 - name: Start the firewalld service
   service:
