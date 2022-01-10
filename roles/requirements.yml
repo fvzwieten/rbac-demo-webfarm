@@ -1,0 +1,3 @@
+# Install ntp role from the Ansible Galaxy
+roles:
+  - src: geerlingguy.ntp
