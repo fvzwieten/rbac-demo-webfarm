@@ -18,7 +18,6 @@
 
 - include_role:
     name: redhat.rhel_system_roles.timesync
-  ignore_errors: yes
   
 - name: Start the firewalld service
   service:
