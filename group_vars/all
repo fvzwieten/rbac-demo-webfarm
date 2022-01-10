@@ -10,3 +10,4 @@ timesync_ntp_servers:
     iburst: yes
   - hostname: 1.rhel.pool.ntp.org
     iburst: yes
+timesync_ntp_provider: chrony
