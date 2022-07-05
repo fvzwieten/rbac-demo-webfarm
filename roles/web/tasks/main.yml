@@ -35,3 +35,18 @@
     immediate: yes
   tags: fw
 
+- name: Write the website configuration
+  ini_file:
+    path: /etc/webserver.conf
+    section: general
+    option: version
+    value: 1
+    mode: 0600
+    backup: no
+
+- ini_file:
+    path: /etc/webserver.conf
+    section: general
+    option: color
+    value: red
+    backup: no
