@@ -29,11 +29,11 @@ defaults
     timeout check           10s
     maxconn                 3000
 
-frontend site
+frontend demosite
     bind :80
     use_backend app
     
-backend app
+backend demoapp
     balance     {{ balance }}
     {% for host in groups['role_webserver'] %}
         server {{ host }} {{ hostvars[host]['ansible_' + iface].ipv4.address }}:{{ httpd_port }}
