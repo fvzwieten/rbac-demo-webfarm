@@ -31,7 +31,7 @@ defaults
 
 frontend demosite
     bind :80
-    use_backend app
+    use_backend demoapp
     
 backend demoapp
     balance     {{ balance }}
