@@ -1,0 +1,13 @@
+---
+role_webserver:
+  hosts:
+    webserver01:
+      ansible_host: 192.168.100.13
+    webserver02:
+      ansible_host: 192.168.100.13
+project_demo001:
+  hosts:
+    webserver01:
+      ansible_host: 192.168.100.13
+    webserver02:
+      ansible_host: 192.168.100.13

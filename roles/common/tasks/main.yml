@@ -8,13 +8,10 @@
     disablerepo: "*"
     enablerepo: "*microsoft*"
   
-- name: Install python bindings for SE Linux
+- name: Install the firewall service
   yum:
-    name: "{{ item }}"
+    name: "firewalld"
     state: present
-  with_items:
-   - libselinux-python
-   - libsemanage-python
 
 #- include_role:
 #    name: redhat.rhel_system_roles.timesync

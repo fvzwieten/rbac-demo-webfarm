@@ -4,9 +4,11 @@
 - hosts: role_webserver
   become: yes
 
+
   roles:
-  - base-apache
-  - web
+  - role: base-apache
+  - role: web
+    mode: deploy
 
   tags:
   - web

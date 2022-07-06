@@ -14,33 +14,35 @@
 
   # These are the tasks to run before applying updates:
   pre_tasks:
-  - name: disable the server in haproxy
-    shell: echo "disable server myapplb/{{ inventory_hostname }}" | socat stdio /var/lib/haproxy/stats
-    delegate_to: "{{ item }}"
-    with_items: "{{ groups['role_lbserver'] }}"
+#  - name: disable the server in haproxy
+#    shell: echo "disable server myapplb/{{ inventory_hostname }}" | socat stdio /var/lib/haproxy/stats
+#    delegate_to: "{{ item }}"
+#    with_items: "{{ groups['role_lbserver'] }}"
 
   roles:
-  - common
-  - base-apache
-  - web
+  - role: common
+  - role: base-apache
+  - role: web
+    mode: update
 
   # These tasks run after the roles:
   post_tasks:
-  - name: Wait for webserver to come up
-    wait_for:
-      host: "{{ inventory_hostname }}"
-      port: 80
-      state: started
-      timeout: 80
-    
-  - name: sleep for demo purposes
-    pause: seconds=10
 
-  - name: Enable the server in haproxy
-    shell: echo "enable server myapplb/{{ inventory_hostname }}" | socat stdio /var/lib/haproxy/stats
-    delegate_to: "{{ item }}"
-    with_items: "{{ groups['role_lbserver'] }}"
+#  - name: Wait for webserver to come up
+#    wait_for:
+#      host: "{{ inventory_hostname }}"
+#      port: 80
+#      state: started
+#      timeout: 80
+
+#  - name: sleep for demo purposes
+#    pause: seconds=10
+
+#  - name: Enable the server in haproxy
+#    shell: echo "enable server myapplb/{{ inventory_hostname }}" | socat stdio /var/lib/haproxy/stats
+#    delegate_to: "{{ item }}"
+#    with_items: "{{ groups['role_lbserver'] }}"
     
-  - name: Give the loadbalancer some time to settle
-    pause: seconds=5
+#  - name: Give the loadbalancer some time to settle
+#    pause: seconds=5
 
