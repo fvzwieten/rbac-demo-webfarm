@@ -57,6 +57,10 @@
     value: "{{ ansible_facts['ansible_local']['webserver']['general']['version'] }} | int + 1"
   when: mode == "update"
 
+- name: show version
+  debug:
+    msg: "{{ ansible_facts['ansible_local']['webserver']['general']['version'] }} | int + 1"
+
 - name: Write the webserver serial out as a custom fact
   ini_file:
     path: "{{ facts_dir }}/webserver.fact"
