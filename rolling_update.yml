@@ -15,7 +15,7 @@
   # These are the tasks to run before applying updates:
   pre_tasks:
   - name: disable the server in haproxy
-    shell: echo "disable server myapplb/{{ inventory_hostname }}" | socat stdio /var/lib/haproxy/stats
+    shell: echo "disable server demoapp/{{ inventory_hostname }}" | socat stdio /var/lib/haproxy/stats
     delegate_to: "{{ item }}"
     with_items: "{{ groups['role_lbserver'] }}"
 
@@ -39,7 +39,7 @@
     pause: seconds=10
 
   - name: Enable the server in haproxy
-    shell: echo "enable server myapplb/{{ inventory_hostname }}" | socat stdio /var/lib/haproxy/stats
+    shell: echo "enable server demoapp/{{ inventory_hostname }}" | socat stdio /var/lib/haproxy/stats
     delegate_to: "{{ item }}"
     with_items: "{{ groups['role_lbserver'] }}"
     
