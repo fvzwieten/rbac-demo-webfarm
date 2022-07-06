@@ -7,7 +7,6 @@
     state: present
   with_items:
    - mariadb-server
-   - MySQL-python
 
 - name: test to see if selinux is running
   command: getenforce
