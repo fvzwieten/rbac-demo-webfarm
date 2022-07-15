@@ -1,0 +1,7 @@
+controller_inventories:
+- name: 'Cloud'
+  description: 'All Cloud instances'
+  host_filter: null
+  kind: ''
+  organization: 'ACME'
+

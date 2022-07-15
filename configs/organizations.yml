@@ -1,0 +1,11 @@
+controller_organizations:
+- name: '{{ org_name }}'
+  description: '{{ org_description }}'
+  # FIXME: default EE doesn't work..
+  execution_environments:
+    - 'Automation Hub Default execution environment'
+  galaxy_credentials:
+#    - 'Automation Hub RH Certified Repository'
+    - 'Ansible Galaxy'
+  notification_templates: 'demo_slack_notification'
+

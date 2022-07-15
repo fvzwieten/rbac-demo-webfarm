@@ -1,0 +1,152 @@
+controller_workflows:
+- name: Deploy Web Farm
+  description: ''
+  state: present
+  organization: '{{ org_name }}'
+  survey_enabled: true
+  survey_spec:
+    description: ''
+    name: ''
+    spec:
+    - choices: ''
+      default: ''
+      max: 10
+      min: 2
+      question_description: For which project is this?
+      question_name: Project
+      required: true
+      type: text
+      variable: project
+
+  workflow_nodes:
+  
+  - identifier: 'Approval (101)'
+    unified_job_template:
+      name: Web Farm
+      type: workflow_approval
+      timeout: 900
+      description: Approve the deployment of a new Web Farm in Azure
+    related:
+      success_nodes:
+        - identifier: Deploy common Azure resources (201)
+
+  - identifier: Deploy common Azure resources (201)
+    unified_job_template:
+      name: Deploy common Azure resources
+      type: job_template
+      organization:
+        name: '{{ org_name }}'
+    related:
+      success_nodes:
+        - identifier: Deploy Webserver 1 (301)
+        - identifier: Deploy Webserver 2 (302)
+        - identifier: Deploy Load Balancer (303)
+        - identifier: Deploy Database Server (304)
+
+  - identifier: Deploy Webserver 1 (301)
+    unified_job_template:
+      name: Deploy Linux VM in Azure
+      type: job_template
+      organization:
+        name: '{{ org_name }}'
+    extra_data:
+      role: webserver
+      vm_name: web01
+    related:
+      success_nodes:
+        - identifier: Refresh Inventory (401)
+
+  - identifier: Deploy Webserver 2 (302)
+    unified_job_template:
+      name: Deploy Linux VM in Azure
+      type: job_template
+      organization:
+        name: '{{ org_name }}'
+    extra_data:
+      role: webserver
+      vm_name: web02
+    related:
+      success_nodes:
+        - identifier: Refresh Inventory (401)
+
+  - identifier: Deploy Load Balancer (303)
+    unified_job_template:
+      name: Deploy Linux VM in Azure
+      type: job_template
+      organization:
+        name: '{{ org_name }}'
+    extra_data:
+      role: dbserver
+      vm_name: db01
+    related:
+      success_nodes:
+        - identifier: Refresh Inventory (401)
+
+  - identifier: Deploy Database Server (304)
+    unified_job_template:
+      name: Deploy Linux VM in Azure
+      type: job_template
+      organization:
+        name: '{{ org_name }}'
+    extra_data:
+      role: lbserver
+      vm_name: lb01
+    related:
+      success_nodes:
+        - identifier: Refresh Inventory (401)
+
+  - identifier: Refresh Inventory (401)
+    unified_job_template:
+      inventory:
+        organization:
+          name: '{{ org_name }}'
+      name: Azure
+      type: inventory_source
+    all_parents_must_converge: true
+    related:
+      success_nodes:
+        - identifier: Install Linux Baseline (501)
+
+  - identifier: 'Install Linux Baseline (501)'
+    unified_job_template:
+      name: Install Linux Baseline
+      type: job_template
+      organization:
+        name: '{{ org_name }}'
+    related:
+      success_nodes:
+        - identifier: Install DB Server (601)
+        - identifier: Install Load Balancer (602)
+        - identifier: Install Web Server (603)
+
+  - identifier: Install DB Server (601)
+    unified_job_template:
+      name: Install DB Server
+      type: job_template
+      organization:
+        name: '{{ org_name }}'
+
+  - identifier: Install Load Balancer (602)
+    unified_job_template:
+      name: Install Load Balancer
+      type: job_template
+      organization:
+        name: '{{ org_name }}'
+
+  - identifier: Install Web Server (603)
+    unified_job_template:
+      name: Install Web Server
+      type: job_template
+      organization:
+        name: '{{ org_name }}'
+    related:
+      success_nodes:
+        - identifier: Deploy Web Site (701)
+
+  - identifier: Deploy Web Site (701)
+    unified_job_template:
+      name: Deploy Web site
+      type: job_template
+      organization:
+        name: '{{ org_name }}'
+ 

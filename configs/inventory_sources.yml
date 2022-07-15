@@ -1,0 +1,6 @@
+controller_inventory_sources:
+- name: 'Azure'
+  description: 'All instances in Azure'
+  source: 'azure_rm'
+  credential: 'Azure'
+  inventory: 'Cloud'
