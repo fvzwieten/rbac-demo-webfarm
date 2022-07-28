@@ -1,11 +1,11 @@
 controller_projects:
-- name: 'Azure Project'
+- name: 'Azure Playbooks'
   description: 'Ansible playbooks for Azure'
   organization: '{{ org_name }}'
   scm_type: git
   scm_url: 'https://github.com/fvzwieten/ansible4azure.git'
   timeout: 0
-- name: 'Web Stack Project'
+- name: 'Web Farm Demo'
   description: 'Ansible Web Farm Demo project'
   organization: '{{ org_name }}'
   scm_type: git

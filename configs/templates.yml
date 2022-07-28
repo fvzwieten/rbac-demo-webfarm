@@ -1,28 +1,30 @@
 controller_templates:
-- name: 'Deploy common Azure resources'
+- name: Deploy common Azure resources
   description: ''
-  execution_environment: 'Azure Execution Environment'
+  execution_environment: Azure Execution Environment
   extra_vars:
     ansible_python_interpreter: /usr/bin/python3
-  inventory: 'Cloud'
-  playbook: 'azure_create_common.yml'
-  project: 'Azure Playbooks'
-  credentials: 'Azure'
-  survey_spec:
-    description: ''
-    name: ''
-    spec:
-    - question_name: 'Project'
-      question_description: 'Project code'
-      choices: ''
-      default: ''
-      max: 10
-      min: 2
-      required: false
-      type: 'text'
-      variable: 'project'
+  inventory: Cloud
+  playbook: azure_create_common.yml
+  project: Azure Playbooks
+  credentials: Azure
+  survey_enabled: true
+  related:
+    survey_spec:
+      name: ''
+      description: ''
+      spec:
+      - question_name: Project
+        question_description: Project code
+        choices: ''
+        default: ''
+        max: 10
+        min: 2
+        required: false
+        type: text
+        variable: project
 
-
+          
 - name: 'Deploy Linux VM in Azure'
   description: ''
   allow_simultaneous: true
@@ -35,42 +37,45 @@ controller_templates:
   playbook: 'azure_create_vm.yml'
   project: 'Azure Playbooks'
   credentials: 'Azure'
-  survey_spec:
-    description: ''
-    name: ''
-    spec:
-    - question_name: 'Project'
-      question_description: 'Project name to which this VM belongs'
-      choices: ''
-      default: ''
-      max: 10
-      min: 2
-      new_question: true
-      required: false
-      type: 'text'
-      variable: 'project'
-    - question_name: 'Name'
-      question_description: 'VM name'
-      choices: ''
-      default: ''
-      max: 30
-      min: 4
-      required: false
-      type: 'text'
-      variable: 'vm_name'
-    - question_name: 'Role'
-      question_description: 'The role of this VM'
-      choices:
-        webserver
+  survey_enabled: true
+  related:
+    survey_spec:
+      name: ''
+      description: ''
+      spec:
+      - question_name: 'Project'
+        question_description: 'Project name to which this VM belongs'
+        choices: ''
+        default: ''
+        max: 10
+        min: 2
+        new_question: true
+        required: false
+        type: 'text'
+        variable: 'project'
+      - question_name: 'Name'
+        question_description: 'VM name'
+        choices: ''
+        default: ''
+        max: 30
+        min: 4
+        required: false
+        type: 'text'
+        variable: 'vm_name'
+      - question_name: 'Role'
+        question_description: 'The role of this VM'
+        choices: 'webserver
+        
         lbserver
-        dbserver
-      default: ''
-      max: null
-      min: null
-      new_question: true
-      required: true
-      type: 'multiplechoice'
-      variable: 'role'
+        
+        dbserver'
+        default: ''
+        max: null
+        min: null
+        new_question: true
+        required: true
+        type: 'multiplechoice'
+        variable: 'role'
 
 
 - name: 'Deploy Web site'
@@ -105,7 +110,9 @@ controller_templates:
   inventory: 'Cloud'
   playbook: 'deploy_lbservers.yml'
   project: 'Web Farm Demo'
-  credentials: 'Linux'
+  credentials:
+    - 'Linux'
+    - 'Proxy Stats'
     
 - name: 'Install Web Server'
   description: ''
@@ -122,20 +129,21 @@ controller_templates:
   playbook: 'rolling_update.yml'
   project: 'Web Farm Demo'
   credentials: 'Linux'
-  survey_spec:
-    description: ''
-    name: ''
-    spec:
-    - question_name: 'Project'
-      question_description: 'Project name for the web farm to lifecycle'
-      choices: ''
-      default: ''
-      max: 10
-      min: 2
-      new_question: true
-      required: true
-      type: 'text'
-      variable: 'project'
+  related:
+    survey_spec:
+      name: ''
+      description: ''
+      spec:
+      - question_name: 'Project'
+        question_description: 'Project name for the web farm to lifecycle'
+        choices: ''
+        default: ''
+        max: 10
+        min: 2
+        new_question: true
+        required: true
+        type: 'text'
+        variable: 'project'
         
 - name: 'Verify RHEL baseline'
   description: 'Make sure all RHEL machines have the same baseline'

@@ -4,3 +4,9 @@ controller_inventory_sources:
   source: 'azure_rm'
   credential: 'Azure'
   inventory: 'Cloud'
+  source_vars:
+    hostnames:
+    - computer_name
+    keyed_groups:
+    - prefix: role
+      key: tags.role | default('none') 

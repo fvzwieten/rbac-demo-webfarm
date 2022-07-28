@@ -17,6 +17,10 @@ controller_workflows:
       required: true
       type: text
       variable: project
+  notification_templates_approvals: example_notification
+  notification_templates_error: example_notification
+  notification_templates_started: example_notification
+  notification_templates_success: example_notification
 
   workflow_nodes:
   

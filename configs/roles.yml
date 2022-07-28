@@ -41,4 +41,17 @@ controller_roles:
 - team: 'Windows Team'
   role: 'read'
 
+- team: 'Cloud Team'
+  role: 'admin'
+  workflow: 'Deploy Web Farm'
+- team: 'Cloud Team'
+  role: 'approval'
+  workflow: 'Deploy Web Farm'
+- team: 'Web Team'
+  role: 'execute'
+  workflow: 'Deploy Web Farm'
+
+- team: 'Linux Team'
+  role: 'admin'
+  job_template: 'Rolling update Webfarm'
 

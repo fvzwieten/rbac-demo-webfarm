@@ -1,0 +1,10 @@
+notification_templates:
+- name: example_notification
+  organization: '{{ org_name }}'
+  notification_type: slack
+  notification_configuration:
+      channels:
+      - '#notifications'
+      hex_color: '#ff0000'
+      token: '{{ slack_token }}'
+

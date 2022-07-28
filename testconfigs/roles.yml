@@ -1,0 +1,2377 @@
+credential_types: []
+credentials:
+- credential_type:
+    kind: galaxy
+    name: Ansible Galaxy/Automation Hub API Token
+    type: credential_type
+  description: ''
+  inputs:
+    auth_url: ''
+    url: https://hub.example.com/api/galaxy/content/community/
+  name: Automation Hub Community Repository
+  natural_key:
+    credential_type:
+      kind: galaxy
+      name: Ansible Galaxy/Automation Hub API Token
+      type: credential_type
+    name: Automation Hub Community Repository
+    organization:
+      name: ACME
+      type: organization
+    type: credential
+  organization:
+    name: ACME
+    type: organization
+- credential_type:
+    kind: registry
+    name: Container Registry
+    type: credential_type
+  description: ''
+  inputs:
+    host: hub.example.com
+    password: ''
+    username: admin
+    verify_ssl: false
+  name: Automation Hub Container Registry
+  natural_key:
+    credential_type:
+      kind: registry
+      name: Container Registry
+      type: credential_type
+    name: Automation Hub Container Registry
+    organization: null
+    type: credential
+  organization: null
+- credential_type:
+    kind: registry
+    name: Container Registry
+    type: credential_type
+  description: ''
+  inputs:
+    host: hub.example.com
+    username: admin
+    verify_ssl: false
+  name: Automation Hub Container Registry
+  natural_key:
+    credential_type:
+      kind: registry
+      name: Container Registry
+      type: credential_type
+    name: Automation Hub Container Registry
+    organization:
+      name: ACME
+      type: organization
+    type: credential
+  organization:
+    name: ACME
+    type: organization
+- credential_type:
+    kind: galaxy
+    name: Ansible Galaxy/Automation Hub API Token
+    type: credential_type
+  description: ''
+  inputs:
+    auth_url: ''
+    url: https://hub.example.com/api/galaxy/content/published/
+  name: Automation Hub Published Repository
+  natural_key:
+    credential_type:
+      kind: galaxy
+      name: Ansible Galaxy/Automation Hub API Token
+      type: credential_type
+    name: Automation Hub Published Repository
+    organization:
+      name: ACME
+      type: organization
+    type: credential
+  organization:
+    name: ACME
+    type: organization
+- credential_type:
+    kind: galaxy
+    name: Ansible Galaxy/Automation Hub API Token
+    type: credential_type
+  description: Credential to access the Automatino Hub
+  inputs:
+    auth_url: ''
+    url: https://hub.example.com/api/galaxy/content/rh-certified/
+  name: Automation Hub RH Certified Repository
+  natural_key:
+    credential_type:
+      kind: galaxy
+      name: Ansible Galaxy/Automation Hub API Token
+      type: credential_type
+    name: Automation Hub RH Certified Repository
+    organization:
+      name: ACME
+      type: organization
+    type: credential
+  organization:
+    name: ACME
+    type: organization
+- credential_type:
+    kind: cloud
+    name: Microsoft Azure Resource Manager
+    type: credential_type
+  description: Azure Subscription
+  inputs:
+    client: 9f44b83d-6df4-46ac-ad86-09ce4227cbaf
+    cloud_environment: ''
+    password: ''
+    secret: ''
+    subscription: f02732ca-0297-4ba9-80fc-fd46459e9209
+    tenant: 29d27382-19d0-4ba6-9c9c-41d5f5b7cf8b
+    username: fvanzwie@redhat.com
+  name: Azure
+  natural_key:
+    credential_type:
+      kind: cloud
+      name: Microsoft Azure Resource Manager
+      type: credential_type
+    name: Azure
+    organization:
+      name: ACME
+      type: organization
+    type: credential
+  organization:
+    name: ACME
+    type: organization
+- credential_type:
+    kind: token
+    name: GitHub Personal Access Token
+    type: credential_type
+  description: ''
+  inputs: {}
+  name: GitHub Website
+  natural_key:
+    credential_type:
+      kind: token
+      name: GitHub Personal Access Token
+      type: credential_type
+    name: GitHub Website
+    organization:
+      name: ACME
+      type: organization
+    type: credential
+  organization:
+    name: ACME
+    type: organization
+- credential_type:
+    kind: ssh
+    name: Machine
+    type: credential_type
+  description: Account for doing automation inside Linux machines
+  inputs:
+    become_method: sudo
+    become_password: ''
+    become_username: root
+    ssh_key_data: ''
+    username: ansible
+  name: Linux
+  natural_key:
+    credential_type:
+      kind: ssh
+      name: Machine
+      type: credential_type
+    name: Linux
+    organization:
+      name: ACME
+      type: organization
+    type: credential
+  organization:
+    name: ACME
+    type: organization
+- credential_type:
+    kind: vault
+    name: Vault
+    type: credential_type
+  description: Credential to access the haproxy vault with the username/password to
+    access the stats page
+  inputs:
+    vault_id: ''
+    vault_password: ''
+  name: Proxy Stats
+  natural_key:
+    credential_type:
+      kind: vault
+      name: Vault
+      type: credential_type
+    name: Proxy Stats
+    organization:
+      name: ACME
+      type: organization
+    type: credential
+  organization:
+    name: ACME
+    type: organization
+- credential_type:
+    kind: ssh
+    name: Machine
+    type: credential_type
+  description: Account for doing automation inside Windows machines
+  inputs:
+    become_method: runas
+    become_username: Administrator
+    password: ''
+    username: ansible
+  name: Windows
+  natural_key:
+    credential_type:
+      kind: ssh
+      name: Machine
+      type: credential_type
+    name: Windows
+    organization:
+      name: ACME
+      type: organization
+    type: credential
+  organization:
+    name: ACME
+    type: organization
+execution_environments:
+- credential:
+    credential_type:
+      kind: registry
+      name: Container Registry
+      type: credential_type
+    name: Automation Hub Container Registry
+    organization: null
+    type: credential
+  description: Execution Environment for RBAC Demo
+  image: hub.example.com/ee-rbac-demo
+  name: Execution Environment for RBAC Demo
+  natural_key:
+    name: Execution Environment for RBAC Demo
+    type: execution_environment
+  organization: null
+  pull: always
+- credential:
+    credential_type:
+      kind: registry
+      name: Container Registry
+      type: credential_type
+    name: Automation Hub Container Registry
+    organization: null
+    type: credential
+  description: Execution Environment for running playbooks against Azure
+  image: hub.example.com/ee-azure:latest
+  name: Azure Execution Environment
+  natural_key:
+    name: Azure Execution Environment
+    type: execution_environment
+  organization: null
+  pull: always
+- credential:
+    credential_type:
+      kind: registry
+      name: Container Registry
+      type: credential_type
+    name: Default Execution Environment Registry Credential
+    organization: null
+    type: credential
+  description: ''
+  image: registry.redhat.io/ansible-automation-platform-21/ee-supported-rhel8:latest
+  name: Default execution environment
+  natural_key:
+    name: Default execution environment
+    type: execution_environment
+  organization: null
+  pull: missing
+- credential:
+    credential_type:
+      kind: registry
+      name: Container Registry
+      type: credential_type
+    name: Default Execution Environment Registry Credential
+    organization: null
+    type: credential
+  description: ''
+  image: registry.redhat.io/ansible-automation-platform-21/ee-29-rhel8:latest
+  name: Ansible Engine 2.9 execution environment
+  natural_key:
+    name: Ansible Engine 2.9 execution environment
+    type: execution_environment
+  organization: null
+  pull: ''
+- credential:
+    credential_type:
+      kind: registry
+      name: Container Registry
+      type: credential_type
+    name: Default Execution Environment Registry Credential
+    organization: null
+    type: credential
+  description: ''
+  image: registry.redhat.io/ansible-automation-platform-21/ee-minimal-rhel8:latest
+  name: Minimal execution environment
+  natural_key:
+    name: Minimal execution environment
+    type: execution_environment
+  organization: null
+  pull: ''
+- credential:
+    credential_type:
+      kind: registry
+      name: Container Registry
+      type: credential_type
+    name: Automation Hub Container Registry
+    organization: null
+    type: credential
+  description: ''
+  image: hub.example.com/ee-supported-rhel8:latest
+  name: Automation Hub Default execution environment
+  natural_key:
+    name: Automation Hub Default execution environment
+    type: execution_environment
+  organization: null
+  pull: ''
+- credential:
+    credential_type:
+      kind: registry
+      name: Container Registry
+      type: credential_type
+    name: Automation Hub Container Registry
+    organization: null
+    type: credential
+  description: ''
+  image: hub.example.com/ee-29-rhel8:latest
+  name: Automation Hub Ansible Engine 2.9 execution environment
+  natural_key:
+    name: Automation Hub Ansible Engine 2.9 execution environment
+    type: execution_environment
+  organization: null
+  pull: ''
+- credential:
+    credential_type:
+      kind: registry
+      name: Container Registry
+      type: credential_type
+    name: Automation Hub Container Registry
+    organization: null
+    type: credential
+  description: ''
+  image: hub.example.com/ee-minimal-rhel8:latest
+  name: Automation Hub Minimal execution environment
+  natural_key:
+    name: Automation Hub Minimal execution environment
+    type: execution_environment
+  organization: null
+  pull: ''
+inventory:
+- description: All Cloud instances
+  host_filter: null
+  kind: ''
+  name: Cloud
+  natural_key:
+    name: Cloud
+    organization:
+      name: ACME
+      type: organization
+    type: inventory
+  organization:
+    name: ACME
+    type: organization
+  related:
+    groups: []
+    hosts:
+    - description: imported
+      enabled: true
+      instance_id: /subscriptions/f02732ca-0297-4ba9-80fc-fd46459e9209/resourceGroups/TEST001/providers/Microsoft.Compute/virtualMachines/test001-db01
+      inventory:
+        name: Cloud
+        organization:
+          name: ACME
+          type: organization
+        type: inventory
+      name: test001-db01_3728
+      natural_key:
+        inventory:
+          name: Cloud
+          organization:
+            name: ACME
+            type: organization
+          type: inventory
+        name: test001-db01_3728
+        type: host
+      related:
+        groups: []
+      variables: '{"ansible_host": "40.91.213.50", "availability_zone": null, "computer_name":
+        "test001-db01", "default_inventory_hostname": "test001-db01_3728", "id": "/subscriptions/f02732ca-0297-4ba9-80fc-fd46459e9209/resourceGroups/TEST001/providers/Microsoft.Compute/virtualMachines/test001-db01",
+        "image": {"offer": "RHEL", "publisher": "RedHat", "sku": "90-gen2", "version":
+        "9.0.2022062402"}, "location": "westeurope", "mac_address": "00-0D-3A-27-C8-BE",
+        "name": "test001-db01", "network_interface": "test001-db0101", "network_interface_id":
+        "/subscriptions/f02732ca-0297-4ba9-80fc-fd46459e9209/resourceGroups/test001/providers/Microsoft.Network/networkInterfaces/test001-db0101",
+        "os_disk": {"name": "test001-db01", "operating_system_type": "linux"}, "os_profile":
+        {"system": "linux"}, "plan": null, "powerstate": "running", "private_ipv4_addresses":
+        ["10.1.0.5"], "provisioning_state": "succeeded", "public_dns_hostnames": [],
+        "public_ip_id": "/subscriptions/f02732ca-0297-4ba9-80fc-fd46459e9209/resourceGroups/test001/providers/Microsoft.Network/publicIPAddresses/test001-db0101",
+        "public_ip_name": "test001-db0101", "public_ipv4_addresses": ["40.91.213.50"],
+        "resource_group": "test001", "resource_type": "Microsoft.Compute/virtualMachines",
+        "security_group": "test001-db0101", "security_group_id": "/subscriptions/f02732ca-0297-4ba9-80fc-fd46459e9209/resourceGroups/test001/providers/Microsoft.Network/networkSecurityGroups/test001-db0101",
+        "tags": {"_own_nic_": "test001-db0101", "_own_nsg_": "test001-db0101", "_own_pip_":
+        "test001-db0101", "project": "test001", "role": "dbserver"}, "virtual_machine_size":
+        "Standard_DS1_v2", "vmid": "9f50648f-7dca-4016-ba47-cfeaf632830c", "vmss":
+        {}}'
+    - description: imported
+      enabled: true
+      instance_id: /subscriptions/f02732ca-0297-4ba9-80fc-fd46459e9209/resourceGroups/TEST001/providers/Microsoft.Compute/virtualMachines/test001-lb01
+      inventory:
+        name: Cloud
+        organization:
+          name: ACME
+          type: organization
+        type: inventory
+      name: test001-lb01_8f91
+      natural_key:
+        inventory:
+          name: Cloud
+          organization:
+            name: ACME
+            type: organization
+          type: inventory
+        name: test001-lb01_8f91
+        type: host
+      related:
+        groups: []
+      variables: '{"ansible_host": "52.232.112.76", "availability_zone": null, "computer_name":
+        "test001-lb01", "default_inventory_hostname": "test001-lb01_8f91", "id": "/subscriptions/f02732ca-0297-4ba9-80fc-fd46459e9209/resourceGroups/TEST001/providers/Microsoft.Compute/virtualMachines/test001-lb01",
+        "image": {"offer": "RHEL", "publisher": "RedHat", "sku": "90-gen2", "version":
+        "9.0.2022062402"}, "location": "westeurope", "mac_address": "00-0D-3A-22-D0-F9",
+        "name": "test001-lb01", "network_interface": "test001-lb0101", "network_interface_id":
+        "/subscriptions/f02732ca-0297-4ba9-80fc-fd46459e9209/resourceGroups/test001/providers/Microsoft.Network/networkInterfaces/test001-lb0101",
+        "os_disk": {"name": "test001-lb01", "operating_system_type": "linux"}, "os_profile":
+        {"system": "linux"}, "plan": null, "powerstate": "running", "private_ipv4_addresses":
+        ["10.1.0.6"], "provisioning_state": "succeeded", "public_dns_hostnames": [],
+        "public_ip_id": "/subscriptions/f02732ca-0297-4ba9-80fc-fd46459e9209/resourceGroups/test001/providers/Microsoft.Network/publicIPAddresses/test001-lb0101",
+        "public_ip_name": "test001-lb0101", "public_ipv4_addresses": ["52.232.112.76"],
+        "resource_group": "test001", "resource_type": "Microsoft.Compute/virtualMachines",
+        "security_group": "test001-lb0101", "security_group_id": "/subscriptions/f02732ca-0297-4ba9-80fc-fd46459e9209/resourceGroups/test001/providers/Microsoft.Network/networkSecurityGroups/test001-lb0101",
+        "tags": {"_own_nic_": "test001-lb0101", "_own_nsg_": "test001-lb0101", "_own_pip_":
+        "test001-lb0101", "project": "test001", "role": "lbserver"}, "virtual_machine_size":
+        "Standard_DS1_v2", "vmid": "9599c7b6-127e-40c2-9fa8-bff059a222e6", "vmss":
+        {}}'
+    - description: imported
+      enabled: true
+      instance_id: /subscriptions/f02732ca-0297-4ba9-80fc-fd46459e9209/resourceGroups/TEST001/providers/Microsoft.Compute/virtualMachines/test001-web01
+      inventory:
+        name: Cloud
+        organization:
+          name: ACME
+          type: organization
+        type: inventory
+      name: test001-web01_acca
+      natural_key:
+        inventory:
+          name: Cloud
+          organization:
+            name: ACME
+            type: organization
+          type: inventory
+        name: test001-web01_acca
+        type: host
+      related:
+        groups: []
+      variables: '{"ansible_host": "104.40.179.213", "availability_zone": null, "computer_name":
+        "test001-web01", "default_inventory_hostname": "test001-web01_acca", "id":
+        "/subscriptions/f02732ca-0297-4ba9-80fc-fd46459e9209/resourceGroups/TEST001/providers/Microsoft.Compute/virtualMachines/test001-web01",
+        "image": {"offer": "RHEL", "publisher": "RedHat", "sku": "90-gen2", "version":
+        "9.0.2022062402"}, "location": "westeurope", "mac_address": "00-0D-3A-22-D3-F3",
+        "name": "test001-web01", "network_interface": "test001-web0101", "network_interface_id":
+        "/subscriptions/f02732ca-0297-4ba9-80fc-fd46459e9209/resourceGroups/test001/providers/Microsoft.Network/networkInterfaces/test001-web0101",
+        "os_disk": {"name": "test001-web01", "operating_system_type": "linux"}, "os_profile":
+        {"system": "linux"}, "plan": null, "powerstate": "running", "private_ipv4_addresses":
+        ["10.1.0.7"], "provisioning_state": "succeeded", "public_dns_hostnames": [],
+        "public_ip_id": "/subscriptions/f02732ca-0297-4ba9-80fc-fd46459e9209/resourceGroups/test001/providers/Microsoft.Network/publicIPAddresses/test001-web0101",
+        "public_ip_name": "test001-web0101", "public_ipv4_addresses": ["104.40.179.213"],
+        "resource_group": "test001", "resource_type": "Microsoft.Compute/virtualMachines",
+        "security_group": "test001-web0101", "security_group_id": "/subscriptions/f02732ca-0297-4ba9-80fc-fd46459e9209/resourceGroups/test001/providers/Microsoft.Network/networkSecurityGroups/test001-web0101",
+        "tags": {"_own_nic_": "test001-web0101", "_own_nsg_": "test001-web0101", "_own_pip_":
+        "test001-web0101", "project": "test001", "role": "webserver"}, "virtual_machine_size":
+        "Standard_DS1_v2", "vmid": "63454afb-bb23-41da-948c-d5c271b963db", "vmss":
+        {}}'
+    - description: imported
+      enabled: true
+      instance_id: /subscriptions/f02732ca-0297-4ba9-80fc-fd46459e9209/resourceGroups/TEST001/providers/Microsoft.Compute/virtualMachines/test001-web02
+      inventory:
+        name: Cloud
+        organization:
+          name: ACME
+          type: organization
+        type: inventory
+      name: test001-web02_33a2
+      natural_key:
+        inventory:
+          name: Cloud
+          organization:
+            name: ACME
+            type: organization
+          type: inventory
+        name: test001-web02_33a2
+        type: host
+      related:
+        groups: []
+      variables: '{"ansible_host": "104.46.58.77", "availability_zone": null, "computer_name":
+        "test001-web02", "default_inventory_hostname": "test001-web02_33a2", "id":
+        "/subscriptions/f02732ca-0297-4ba9-80fc-fd46459e9209/resourceGroups/TEST001/providers/Microsoft.Compute/virtualMachines/test001-web02",
+        "image": {"offer": "RHEL", "publisher": "RedHat", "sku": "90-gen2", "version":
+        "9.0.2022062402"}, "location": "westeurope", "mac_address": "00-0D-3A-27-C4-9B",
+        "name": "test001-web02", "network_interface": "test001-web0201", "network_interface_id":
+        "/subscriptions/f02732ca-0297-4ba9-80fc-fd46459e9209/resourceGroups/test001/providers/Microsoft.Network/networkInterfaces/test001-web0201",
+        "os_disk": {"name": "test001-web02", "operating_system_type": "linux"}, "os_profile":
+        {"system": "linux"}, "plan": null, "powerstate": "running", "private_ipv4_addresses":
+        ["10.1.0.4"], "provisioning_state": "succeeded", "public_dns_hostnames": [],
+        "public_ip_id": "/subscriptions/f02732ca-0297-4ba9-80fc-fd46459e9209/resourceGroups/test001/providers/Microsoft.Network/publicIPAddresses/test001-web0201",
+        "public_ip_name": "test001-web0201", "public_ipv4_addresses": ["104.46.58.77"],
+        "resource_group": "test001", "resource_type": "Microsoft.Compute/virtualMachines",
+        "security_group": "test001-web0201", "security_group_id": "/subscriptions/f02732ca-0297-4ba9-80fc-fd46459e9209/resourceGroups/test001/providers/Microsoft.Network/networkSecurityGroups/test001-web0201",
+        "tags": {"_own_nic_": "test001-web0201", "_own_nsg_": "test001-web0201", "_own_pip_":
+        "test001-web0201", "project": "test001", "role": "webserver"}, "virtual_machine_size":
+        "Standard_DS1_v2", "vmid": "d35dfa04-e05c-4f74-bce1-eaf42b146fe3", "vmss":
+        {}}'
+  variables: '---'
+inventory_sources:
+- credential:
+    credential_type:
+      kind: cloud
+      name: Microsoft Azure Resource Manager
+      type: credential_type
+    name: Azure
+    organization:
+      name: ACME
+      type: organization
+    type: credential
+  description: All instances in Azure
+  enabled_value: ''
+  enabled_var: ''
+  execution_environment: null
+  host_filter: ''
+  inventory:
+    name: Cloud
+    organization:
+      name: ACME
+      type: organization
+    type: inventory
+  name: Azure
+  natural_key:
+    inventory:
+      name: Cloud
+      organization:
+        name: ACME
+        type: organization
+      type: inventory
+    name: Azure
+    type: inventory_source
+  overwrite: false
+  overwrite_vars: false
+  related:
+    notification_templates_error: []
+    notification_templates_started: []
+    notification_templates_success: []
+    schedules: []
+  source: azure_rm
+  source_path: ''
+  source_project: null
+  source_vars: ''
+  timeout: 0
+  update_cache_timeout: 0
+  update_on_launch: false
+  update_on_project_update: false
+  verbosity: 1
+job_templates:
+- allow_simultaneous: false
+  ask_credential_on_launch: false
+  ask_diff_mode_on_launch: false
+  ask_inventory_on_launch: false
+  ask_job_type_on_launch: false
+  ask_limit_on_launch: false
+  ask_scm_branch_on_launch: false
+  ask_skip_tags_on_launch: false
+  ask_tags_on_launch: false
+  ask_variables_on_launch: false
+  ask_verbosity_on_launch: false
+  become_enabled: false
+  description: ''
+  diff_mode: false
+  execution_environment:
+    name: Azure Execution Environment
+    type: execution_environment
+  extra_vars: '{"ansible_python_interpreter": "/usr/bin/python3"}'
+  force_handlers: false
+  forks: 0
+  host_config_key: ''
+  inventory:
+    name: Cloud
+    organization:
+      name: ACME
+      type: organization
+    type: inventory
+  job_slice_count: 1
+  job_tags: ''
+  job_type: run
+  limit: ''
+  name: Deploy common Azure resources
+  natural_key:
+    name: Deploy common Azure resources
+    organization:
+      name: ACME
+      type: organization
+    type: job_template
+  playbook: azure_create_common.yml
+  project:
+    name: Azure Playbooks
+    organization:
+      name: ACME
+      type: organization
+    type: project
+  related:
+    credentials:
+    - credential_type:
+        kind: cloud
+        name: Microsoft Azure Resource Manager
+        type: credential_type
+      name: Azure
+      organization:
+        name: ACME
+        type: organization
+      type: credential
+    labels: []
+    notification_templates_error: []
+    notification_templates_started: []
+    notification_templates_success: []
+    schedules: []
+    survey_spec: {}
+  scm_branch: ''
+  skip_tags: ''
+  start_at_task: ''
+  survey_enabled: false
+  timeout: 0
+  use_fact_cache: false
+  verbosity: 0
+  webhook_credential: null
+  webhook_service: ''
+- allow_simultaneous: true
+  ask_credential_on_launch: false
+  ask_diff_mode_on_launch: false
+  ask_inventory_on_launch: false
+  ask_job_type_on_launch: false
+  ask_limit_on_launch: false
+  ask_scm_branch_on_launch: false
+  ask_skip_tags_on_launch: false
+  ask_tags_on_launch: false
+  ask_variables_on_launch: false
+  ask_verbosity_on_launch: false
+  become_enabled: false
+  description: ''
+  diff_mode: false
+  execution_environment:
+    name: Azure Execution Environment
+    type: execution_environment
+  extra_vars: '{"os_type": "Linux", "ansible_python_interpreter": "/usr/bin/python3"}'
+  force_handlers: false
+  forks: 0
+  host_config_key: ''
+  inventory:
+    name: Cloud
+    organization:
+      name: ACME
+      type: organization
+    type: inventory
+  job_slice_count: 1
+  job_tags: ''
+  job_type: run
+  limit: ''
+  name: Deploy Linux VM in Azure
+  natural_key:
+    name: Deploy Linux VM in Azure
+    organization:
+      name: ACME
+      type: organization
+    type: job_template
+  playbook: azure_create_vm.yml
+  project:
+    name: Azure Playbooks
+    organization:
+      name: ACME
+      type: organization
+    type: project
+  related:
+    credentials:
+    - credential_type:
+        kind: cloud
+        name: Microsoft Azure Resource Manager
+        type: credential_type
+      name: Azure
+      organization:
+        name: ACME
+        type: organization
+      type: credential
+    labels: []
+    notification_templates_error: []
+    notification_templates_started: []
+    notification_templates_success: []
+    schedules: []
+    survey_spec:
+      description: ''
+      name: ''
+      spec:
+      - choices: ''
+        default: ''
+        max: 10
+        min: 2
+        new_question: true
+        question_description: Project name to which this VM belongs
+        question_name: Project
+        required: false
+        type: text
+        variable: project
+      - choices: ''
+        default: ''
+        max: 30
+        min: 4
+        question_description: VM name
+        question_name: Name
+        required: false
+        type: text
+        variable: vm_name
+      - choices: 'webserver
+
+          lbserver
+
+          dbserver'
+        default: ''
+        max: null
+        min: null
+        new_question: true
+        question_description: The role of this VM
+        question_name: Role
+        required: true
+        type: multiplechoice
+        variable: role
+  scm_branch: ''
+  skip_tags: ''
+  start_at_task: ''
+  survey_enabled: true
+  timeout: 0
+  use_fact_cache: false
+  verbosity: 0
+  webhook_credential: null
+  webhook_service: ''
+- allow_simultaneous: false
+  ask_credential_on_launch: false
+  ask_diff_mode_on_launch: false
+  ask_inventory_on_launch: false
+  ask_job_type_on_launch: false
+  ask_limit_on_launch: false
+  ask_scm_branch_on_launch: false
+  ask_skip_tags_on_launch: false
+  ask_tags_on_launch: false
+  ask_variables_on_launch: false
+  ask_verbosity_on_launch: false
+  become_enabled: false
+  description: ''
+  diff_mode: false
+  execution_environment: null
+  extra_vars: '{"git_base": "https://github.com/fvzwieten"}'
+  force_handlers: false
+  forks: 0
+  host_config_key: ''
+  inventory:
+    name: Cloud
+    organization:
+      name: ACME
+      type: organization
+    type: inventory
+  job_slice_count: 1
+  job_tags: ''
+  job_type: run
+  limit: ''
+  name: Deploy Web site
+  natural_key:
+    name: Deploy Web site
+    organization:
+      name: ACME
+      type: organization
+    type: job_template
+  playbook: update_website.yml
+  project:
+    name: Web Farm Demo
+    organization:
+      name: ACME
+      type: organization
+    type: project
+  related:
+    credentials:
+    - credential_type:
+        kind: ssh
+        name: Machine
+        type: credential_type
+      name: Linux
+      organization:
+        name: ACME
+        type: organization
+      type: credential
+    labels: []
+    notification_templates_error: []
+    notification_templates_started: []
+    notification_templates_success: []
+    schedules: []
+    survey_spec: {}
+  scm_branch: ''
+  skip_tags: ''
+  start_at_task: ''
+  survey_enabled: false
+  timeout: 0
+  use_fact_cache: false
+  verbosity: 0
+  webhook_credential:
+    credential_type:
+      kind: token
+      name: GitHub Personal Access Token
+      type: credential_type
+    name: GitHub Website
+    organization:
+      name: ACME
+      type: organization
+    type: credential
+  webhook_service: github
+- allow_simultaneous: false
+  ask_credential_on_launch: false
+  ask_diff_mode_on_launch: false
+  ask_inventory_on_launch: false
+  ask_job_type_on_launch: false
+  ask_limit_on_launch: false
+  ask_scm_branch_on_launch: false
+  ask_skip_tags_on_launch: false
+  ask_tags_on_launch: false
+  ask_variables_on_launch: false
+  ask_verbosity_on_launch: false
+  become_enabled: false
+  description: ''
+  diff_mode: false
+  execution_environment: null
+  extra_vars: '---'
+  force_handlers: false
+  forks: 0
+  host_config_key: ''
+  inventory:
+    name: Cloud
+    organization:
+      name: ACME
+      type: organization
+    type: inventory
+  job_slice_count: 1
+  job_tags: ''
+  job_type: run
+  limit: ''
+  name: Install DB Server
+  natural_key:
+    name: Install DB Server
+    organization:
+      name: ACME
+      type: organization
+    type: job_template
+  playbook: deploy_dbservers.yml
+  project:
+    name: Web Farm Demo
+    organization:
+      name: ACME
+      type: organization
+    type: project
+  related:
+    credentials:
+    - credential_type:
+        kind: ssh
+        name: Machine
+        type: credential_type
+      name: Linux
+      organization:
+        name: ACME
+        type: organization
+      type: credential
+    labels: []
+    notification_templates_error: []
+    notification_templates_started: []
+    notification_templates_success: []
+    schedules: []
+    survey_spec: {}
+  scm_branch: ''
+  skip_tags: ''
+  start_at_task: ''
+  survey_enabled: false
+  timeout: 0
+  use_fact_cache: false
+  verbosity: 0
+  webhook_credential: null
+  webhook_service: ''
+- allow_simultaneous: false
+  ask_credential_on_launch: false
+  ask_diff_mode_on_launch: false
+  ask_inventory_on_launch: false
+  ask_job_type_on_launch: false
+  ask_limit_on_launch: false
+  ask_scm_branch_on_launch: false
+  ask_skip_tags_on_launch: false
+  ask_tags_on_launch: false
+  ask_variables_on_launch: false
+  ask_verbosity_on_launch: false
+  become_enabled: false
+  description: ''
+  diff_mode: false
+  execution_environment:
+    name: Execution Environment for RBAC Demo
+    type: execution_environment
+  extra_vars: '---'
+  force_handlers: false
+  forks: 0
+  host_config_key: ''
+  inventory:
+    name: Cloud
+    organization:
+      name: ACME
+      type: organization
+    type: inventory
+  job_slice_count: 1
+  job_tags: ''
+  job_type: run
+  limit: ''
+  name: Install Linux Baseline
+  natural_key:
+    name: Install Linux Baseline
+    organization:
+      name: ACME
+      type: organization
+    type: job_template
+  playbook: deploy_common.yml
+  project:
+    name: Web Farm Demo
+    organization:
+      name: ACME
+      type: organization
+    type: project
+  related:
+    credentials:
+    - credential_type:
+        kind: ssh
+        name: Machine
+        type: credential_type
+      name: Linux
+      organization:
+        name: ACME
+        type: organization
+      type: credential
+    labels: []
+    notification_templates_error: []
+    notification_templates_started: []
+    notification_templates_success: []
+    schedules: []
+    survey_spec: {}
+  scm_branch: ''
+  skip_tags: ''
+  start_at_task: ''
+  survey_enabled: false
+  timeout: 0
+  use_fact_cache: true
+  verbosity: 0
+  webhook_credential: null
+  webhook_service: ''
+- allow_simultaneous: false
+  ask_credential_on_launch: false
+  ask_diff_mode_on_launch: false
+  ask_inventory_on_launch: false
+  ask_job_type_on_launch: false
+  ask_limit_on_launch: false
+  ask_scm_branch_on_launch: false
+  ask_skip_tags_on_launch: false
+  ask_tags_on_launch: false
+  ask_variables_on_launch: false
+  ask_verbosity_on_launch: false
+  become_enabled: false
+  description: ''
+  diff_mode: false
+  execution_environment: null
+  extra_vars: '---'
+  force_handlers: false
+  forks: 0
+  host_config_key: ''
+  inventory:
+    name: Cloud
+    organization:
+      name: ACME
+      type: organization
+    type: inventory
+  job_slice_count: 1
+  job_tags: ''
+  job_type: run
+  limit: ''
+  name: Install Load Balancer
+  natural_key:
+    name: Install Load Balancer
+    organization:
+      name: ACME
+      type: organization
+    type: job_template
+  playbook: deploy_lbservers.yml
+  project:
+    name: Web Farm Demo
+    organization:
+      name: ACME
+      type: organization
+    type: project
+  related:
+    credentials:
+    - credential_type:
+        kind: ssh
+        name: Machine
+        type: credential_type
+      name: Linux
+      organization:
+        name: ACME
+        type: organization
+      type: credential
+    labels: []
+    notification_templates_error: []
+    notification_templates_started: []
+    notification_templates_success: []
+    schedules: []
+    survey_spec: {}
+  scm_branch: ''
+  skip_tags: ''
+  start_at_task: ''
+  survey_enabled: false
+  timeout: 0
+  use_fact_cache: false
+  verbosity: 0
+  webhook_credential: null
+  webhook_service: ''
+- allow_simultaneous: false
+  ask_credential_on_launch: false
+  ask_diff_mode_on_launch: false
+  ask_inventory_on_launch: false
+  ask_job_type_on_launch: false
+  ask_limit_on_launch: false
+  ask_scm_branch_on_launch: false
+  ask_skip_tags_on_launch: false
+  ask_tags_on_launch: false
+  ask_variables_on_launch: false
+  ask_verbosity_on_launch: false
+  become_enabled: false
+  description: ''
+  diff_mode: false
+  execution_environment:
+    name: Execution Environment for RBAC Demo
+    type: execution_environment
+  extra_vars: '---'
+  force_handlers: false
+  forks: 0
+  host_config_key: ''
+  inventory:
+    name: Cloud
+    organization:
+      name: ACME
+      type: organization
+    type: inventory
+  job_slice_count: 1
+  job_tags: ''
+  job_type: run
+  limit: ''
+  name: Install Web Server
+  natural_key:
+    name: Install Web Server
+    organization:
+      name: ACME
+      type: organization
+    type: job_template
+  playbook: deploy_webservers.yml
+  project:
+    name: Web Farm Demo
+    organization:
+      name: ACME
+      type: organization
+    type: project
+  related:
+    credentials:
+    - credential_type:
+        kind: ssh
+        name: Machine
+        type: credential_type
+      name: Linux
+      organization:
+        name: ACME
+        type: organization
+      type: credential
+    labels: []
+    notification_templates_error: []
+    notification_templates_started: []
+    notification_templates_success: []
+    schedules: []
+    survey_spec: {}
+  scm_branch: ''
+  skip_tags: ''
+  start_at_task: ''
+  survey_enabled: false
+  timeout: 0
+  use_fact_cache: false
+  verbosity: 0
+  webhook_credential: null
+  webhook_service: ''
+- allow_simultaneous: false
+  ask_credential_on_launch: false
+  ask_diff_mode_on_launch: false
+  ask_inventory_on_launch: false
+  ask_job_type_on_launch: false
+  ask_limit_on_launch: false
+  ask_scm_branch_on_launch: false
+  ask_skip_tags_on_launch: false
+  ask_tags_on_launch: false
+  ask_variables_on_launch: false
+  ask_verbosity_on_launch: false
+  become_enabled: false
+  description: Lifecycle the webfarm installation
+  diff_mode: false
+  execution_environment:
+    name: Execution Environment for RBAC Demo
+    type: execution_environment
+  extra_vars: '---'
+  force_handlers: false
+  forks: 0
+  host_config_key: ''
+  inventory:
+    name: Cloud
+    organization:
+      name: ACME
+      type: organization
+    type: inventory
+  job_slice_count: 1
+  job_tags: ''
+  job_type: run
+  limit: ''
+  name: Rolling update Webfarm
+  natural_key:
+    name: Rolling update Webfarm
+    organization:
+      name: ACME
+      type: organization
+    type: job_template
+  playbook: rolling_update.yml
+  project:
+    name: Web Farm Demo
+    organization:
+      name: ACME
+      type: organization
+    type: project
+  related:
+    credentials:
+    - credential_type:
+        kind: ssh
+        name: Machine
+        type: credential_type
+      name: Linux
+      organization:
+        name: ACME
+        type: organization
+      type: credential
+    labels: []
+    notification_templates_error: []
+    notification_templates_started: []
+    notification_templates_success: []
+    schedules: []
+    survey_spec:
+      description: ''
+      name: ''
+      spec:
+      - choices: ''
+        default: ''
+        max: 10
+        min: 2
+        new_question: true
+        question_description: Project name for the web farm to lifecycle
+        question_name: Project
+        required: true
+        type: text
+        variable: project
+  scm_branch: ''
+  skip_tags: ''
+  start_at_task: ''
+  survey_enabled: true
+  timeout: 0
+  use_fact_cache: false
+  verbosity: 0
+  webhook_credential: null
+  webhook_service: ''
+- allow_simultaneous: false
+  ask_credential_on_launch: false
+  ask_diff_mode_on_launch: false
+  ask_inventory_on_launch: false
+  ask_job_type_on_launch: false
+  ask_limit_on_launch: false
+  ask_scm_branch_on_launch: false
+  ask_skip_tags_on_launch: false
+  ask_tags_on_launch: false
+  ask_variables_on_launch: false
+  ask_verbosity_on_launch: false
+  become_enabled: false
+  description: Make sure all RHEL machines have the same baseline
+  diff_mode: false
+  execution_environment: null
+  extra_vars: ''
+  force_handlers: false
+  forks: 0
+  host_config_key: ''
+  inventory: null
+  job_slice_count: 1
+  job_tags: ''
+  job_type: run
+  limit: ''
+  name: Verify RHEL baseline
+  natural_key:
+    name: Verify RHEL baseline
+    organization: null
+    type: job_template
+  playbook: ''
+  project: null
+  related:
+    credentials: []
+    labels: []
+    notification_templates_error: []
+    notification_templates_started: []
+    notification_templates_success: []
+    schedules:
+    - description: ''
+      diff_mode: null
+      enabled: false
+      extra_data: {}
+      inventory: null
+      job_tags: null
+      job_type: null
+      limit: null
+      name: Verify RHEL
+      natural_key:
+        name: Verify RHEL
+        type: schedule
+        unified_job_template:
+          name: Verify RHEL baseline
+          organization: null
+          type: job_template
+      related:
+        credentials: []
+      rrule: DTSTART;TZID=Europe/Berlin:20201124T000000 RRULE:FREQ=MINUTELY;INTERVAL=30
+      scm_branch: null
+      skip_tags: null
+      unified_job_template:
+        name: Verify RHEL baseline
+        organization: null
+        type: job_template
+      verbosity: null
+    survey_spec: {}
+  scm_branch: ''
+  skip_tags: ''
+  start_at_task: ''
+  survey_enabled: true
+  timeout: 0
+  use_fact_cache: true
+  verbosity: 0
+  webhook_credential: null
+  webhook_service: ''
+notification_templates: []
+organizations:
+- default_environment: null
+  description: ACME Coorporation
+  max_hosts: 0
+  name: ACME
+  natural_key:
+    name: ACME
+    type: organization
+  related:
+    execution_environments: []
+    galaxy_credentials:
+    - credential_type:
+        kind: galaxy
+        name: Ansible Galaxy/Automation Hub API Token
+        type: credential_type
+      name: Ansible Galaxy
+      organization: null
+      type: credential
+    notification_templates: []
+    notification_templates_approvals: []
+    notification_templates_error: []
+    notification_templates_started: []
+    notification_templates_success: []
+projects:
+- allow_override: false
+  credential: null
+  default_environment: null
+  description: Ansible playbooks for Azure
+  local_path: _72__azure_playbooks
+  name: Azure Playbooks
+  natural_key:
+    name: Azure Playbooks
+    organization:
+      name: ACME
+      type: organization
+    type: project
+  organization:
+    name: ACME
+    type: organization
+  related:
+    notification_templates_error: []
+    notification_templates_started: []
+    notification_templates_success: []
+    schedules: []
+  scm_branch: ''
+  scm_clean: false
+  scm_delete_on_update: false
+  scm_refspec: ''
+  scm_track_submodules: false
+  scm_type: git
+  scm_update_cache_timeout: 0
+  scm_update_on_launch: false
+  scm_url: https://github.com/fvzwieten/ansible4azure.git
+  timeout: 0
+- allow_override: false
+  credential: null
+  default_environment: null
+  description: Ansible Web Farm Demo project
+  local_path: _73__web_farm_demo
+  name: Web Farm Demo
+  natural_key:
+    name: Web Farm Demo
+    organization:
+      name: ACME
+      type: organization
+    type: project
+  organization:
+    name: ACME
+    type: organization
+  related:
+    notification_templates_error: []
+    notification_templates_started: []
+    notification_templates_success: []
+    schedules: []
+  scm_branch: ''
+  scm_clean: false
+  scm_delete_on_update: false
+  scm_refspec: ''
+  scm_track_submodules: false
+  scm_type: git
+  scm_update_cache_timeout: 0
+  scm_update_on_launch: false
+  scm_url: https://github.com/fvzwieten/web-farm-demo.git
+  timeout: 0
+teams:
+- description: Manages all cloud resources
+  name: Cloud Team
+  natural_key:
+    name: Cloud Team
+    organization:
+      name: ACME
+      type: organization
+    type: team
+  organization:
+    name: ACME
+    type: organization
+  related:
+    roles: []
+- description: Team that manages content
+  name: Content Team
+  natural_key:
+    name: Content Team
+    organization:
+      name: ACME
+      type: organization
+    type: team
+  organization:
+    name: ACME
+    type: organization
+  related:
+    roles: []
+- description: The infamous Database Team that rule all data
+  name: Database Team
+  natural_key:
+    name: Database Team
+    organization:
+      name: ACME
+      type: organization
+    type: team
+  organization:
+    name: ACME
+    type: organization
+  related:
+    roles: []
+- description: The FOSS guys
+  name: Linux Team
+  natural_key:
+    name: Linux Team
+    organization:
+      name: ACME
+      type: organization
+    type: team
+  organization:
+    name: ACME
+    type: organization
+  related:
+    roles: []
+- description: The team that connects everybody
+  name: Network Team
+  natural_key:
+    name: Network Team
+    organization:
+      name: ACME
+      type: organization
+    type: team
+  organization:
+    name: ACME
+    type: organization
+  related:
+    roles: []
+- description: The statefull team
+  name: Storage Team
+  natural_key:
+    name: Storage Team
+    organization:
+      name: ACME
+      type: organization
+    type: team
+  organization:
+    name: ACME
+    type: organization
+  related:
+    roles: []
+- description: Managed all Web resources
+  name: Web Team
+  natural_key:
+    name: Web Team
+    organization:
+      name: ACME
+      type: organization
+    type: team
+  organization:
+    name: ACME
+    type: organization
+  related:
+    roles: []
+- description: The team that manages all Windows machines
+  name: Windows Team
+  natural_key:
+    name: Windows Team
+    organization:
+      name: ACME
+      type: organization
+    type: team
+  organization:
+    name: ACME
+    type: organization
+  related:
+    roles: []
+users:
+- email: admin@example.com
+  first_name: Admin
+  is_superuser: true
+  is_system_auditor: false
+  last_name: Guy
+  natural_key:
+    type: user
+    username: admin
+  related:
+    roles:
+    - content_object:
+        name: Deploy Linux VM in Azure
+        organization:
+          name: ACME
+          type: organization
+        type: job_template
+      name: Admin
+      type: role
+    - content_object:
+        name: Deploy Web site
+        organization:
+          name: ACME
+          type: organization
+        type: job_template
+      name: Admin
+      type: role
+    - content_object:
+        name: Install DB Server
+        organization:
+          name: ACME
+          type: organization
+        type: job_template
+      name: Admin
+      type: role
+    - content_object:
+        name: Install Linux Baseline
+        organization:
+          name: ACME
+          type: organization
+        type: job_template
+      name: Admin
+      type: role
+    - content_object:
+        name: Install Load Balancer
+        organization:
+          name: ACME
+          type: organization
+        type: job_template
+      name: Admin
+      type: role
+    - content_object:
+        name: Install Web Server
+        organization:
+          name: ACME
+          type: organization
+        type: job_template
+      name: Admin
+      type: role
+    - content_object:
+        name: Rolling update Webfarm
+        organization:
+          name: ACME
+          type: organization
+        type: job_template
+      name: Admin
+      type: role
+    - content_object:
+        name: Verify RHEL baseline
+        organization: null
+        type: job_template
+      name: Admin
+      type: role
+    - content_object:
+        name: Deploy common Azure resources
+        organization:
+          name: ACME
+          type: organization
+        type: job_template
+      name: Admin
+      type: role
+    - name: System Administrator
+      type: role
+  username: admin
+- email: auditguy@example.com
+  first_name: Audit
+  is_superuser: false
+  is_system_auditor: true
+  last_name: Guy
+  natural_key:
+    type: user
+    username: auditguy
+  related:
+    roles:
+    - name: System Auditor
+      type: role
+  username: auditguy
+- email: azure@example.com
+  first_name: Cloud
+  is_superuser: false
+  is_system_auditor: false
+  last_name: Guy
+  natural_key:
+    type: user
+    username: cloudguy
+  related:
+    roles:
+    - content_object:
+        name: Deploy Linux VM in Azure
+        organization:
+          name: ACME
+          type: organization
+        type: job_template
+      name: Read
+      type: role
+    - content_object:
+        name: Install DB Server
+        organization:
+          name: ACME
+          type: organization
+        type: job_template
+      name: Read
+      type: role
+    - content_object:
+        name: Install Linux Baseline
+        organization:
+          name: ACME
+          type: organization
+        type: job_template
+      name: Read
+      type: role
+    - content_object:
+        name: Install Load Balancer
+        organization:
+          name: ACME
+          type: organization
+        type: job_template
+      name: Read
+      type: role
+    - content_object:
+        name: Install Web Server
+        organization:
+          name: ACME
+          type: organization
+        type: job_template
+      name: Read
+      type: role
+    - content_object:
+        name: Cloud Team
+        organization:
+          name: ACME
+          type: organization
+        type: team
+      name: Member
+      type: role
+  username: cloudguy
+- email: content@example.com
+  first_name: Content
+  is_superuser: false
+  is_system_auditor: false
+  last_name: Guy
+  natural_key:
+    type: user
+    username: contentguy
+  related:
+    roles:
+    - content_object:
+        name: Content Team
+        organization:
+          name: ACME
+          type: organization
+        type: team
+      name: Member
+      type: role
+    - content_object:
+        name: Content Team
+        organization:
+          name: ACME
+          type: organization
+        type: team
+      name: Read
+      type: role
+  username: contentguy
+- email: databaseguy@example.com
+  first_name: Database
+  is_superuser: false
+  is_system_auditor: false
+  last_name: Guy
+  natural_key:
+    type: user
+    username: databaseguy
+  related:
+    roles:
+    - content_object:
+        name: Database Team
+        organization:
+          name: ACME
+          type: organization
+        type: team
+      name: Member
+      type: role
+    - content_object:
+        name: Database Team
+        organization:
+          name: ACME
+          type: organization
+        type: team
+      name: Read
+      type: role
+  username: databaseguy
+- email: linuxguy@example.com
+  first_name: Linux
+  is_superuser: false
+  is_system_auditor: false
+  last_name: Guy
+  natural_key:
+    type: user
+    username: linuxguy
+  related:
+    roles:
+    - content_object:
+        name: Linux Team
+        organization:
+          name: ACME
+          type: organization
+        type: team
+      name: Member
+      type: role
+    - content_object:
+        name: Linux Team
+        organization:
+          name: ACME
+          type: organization
+        type: team
+      name: Read
+      type: role
+  username: linuxguy
+- email: networkguy@example.com
+  first_name: Network
+  is_superuser: false
+  is_system_auditor: false
+  last_name: Guy
+  natural_key:
+    type: user
+    username: networkguy
+  related:
+    roles:
+    - content_object:
+        name: Network Team
+        organization:
+          name: ACME
+          type: organization
+        type: team
+      name: Member
+      type: role
+    - content_object:
+        name: Network Team
+        organization:
+          name: ACME
+          type: organization
+        type: team
+      name: Read
+      type: role
+  username: networkguy
+- email: storage.guy@example.com
+  first_name: Storage
+  is_superuser: false
+  is_system_auditor: false
+  last_name: Guy
+  natural_key:
+    type: user
+    username: storageguy
+  related:
+    roles:
+    - content_object:
+        name: Storage Team
+        organization:
+          name: ACME
+          type: organization
+        type: team
+      name: Member
+      type: role
+    - content_object:
+        name: Storage Team
+        organization:
+          name: ACME
+          type: organization
+        type: team
+      name: Read
+      type: role
+  username: storageguy
+- email: web@example.com
+  first_name: Web
+  is_superuser: false
+  is_system_auditor: false
+  last_name: Guy
+  natural_key:
+    type: user
+    username: webguy
+  related:
+    roles:
+    - content_object:
+        name: Web Team
+        organization:
+          name: ACME
+          type: organization
+        type: team
+      name: Member
+      type: role
+    - content_object:
+        name: Web Team
+        organization:
+          name: ACME
+          type: organization
+        type: team
+      name: Read
+      type: role
+  username: webguy
+- email: windowsguy@example.com
+  first_name: Windows
+  is_superuser: false
+  is_system_auditor: false
+  last_name: Guy
+  natural_key:
+    type: user
+    username: windowsguy
+  related:
+    roles:
+    - content_object:
+        name: Windows Team
+        organization:
+          name: ACME
+          type: organization
+        type: team
+      name: Member
+      type: role
+    - content_object:
+        name: Windows Team
+        organization:
+          name: ACME
+          type: organization
+        type: team
+      name: Read
+      type: role
+  username: windowsguy
+workflow_job_templates:
+- allow_simultaneous: false
+  ask_inventory_on_launch: false
+  ask_limit_on_launch: false
+  ask_scm_branch_on_launch: false
+  ask_variables_on_launch: false
+  description: ''
+  extra_vars: ''
+  inventory: null
+  limit: null
+  name: Deploy Web Farm
+  natural_key:
+    name: Deploy Web Farm
+    organization:
+      name: ACME
+      type: organization
+    type: workflow_job_template
+  organization:
+    name: ACME
+    type: organization
+  related:
+    labels: []
+    notification_templates_approvals: []
+    notification_templates_error: []
+    notification_templates_started: []
+    notification_templates_success: []
+    schedules: []
+    survey_spec:
+      description: ''
+      name: ''
+      spec:
+      - choices: ''
+        default: ''
+        max: 10
+        min: 2
+        question_description: For which project is this?
+        question_name: Project
+        required: true
+        type: text
+        variable: project
+    workflow_nodes:
+    - all_parents_must_converge: false
+      diff_mode: null
+      extra_data: {}
+      identifier: Deploy common Azure resources (201)
+      inventory: null
+      job_tags: null
+      job_type: null
+      limit: null
+      natural_key:
+        identifier: Deploy common Azure resources (201)
+        type: workflow_job_template_node
+        workflow_job_template:
+          name: Deploy Web Farm
+          organization:
+            name: ACME
+            type: organization
+          type: workflow_job_template
+      related:
+        always_nodes: []
+        credentials: []
+        failure_nodes: []
+        success_nodes:
+        - identifier: Deploy Webserver 1 (301)
+          type: workflow_job_template_node
+          workflow_job_template:
+            name: Deploy Web Farm
+            organization:
+              name: ACME
+              type: organization
+            type: workflow_job_template
+        - identifier: Deploy Webserver 2 (302)
+          type: workflow_job_template_node
+          workflow_job_template:
+            name: Deploy Web Farm
+            organization:
+              name: ACME
+              type: organization
+            type: workflow_job_template
+        - identifier: Deploy Load Balancer (303)
+          type: workflow_job_template_node
+          workflow_job_template:
+            name: Deploy Web Farm
+            organization:
+              name: ACME
+              type: organization
+            type: workflow_job_template
+        - identifier: Deploy Database Server (304)
+          type: workflow_job_template_node
+          workflow_job_template:
+            name: Deploy Web Farm
+            organization:
+              name: ACME
+              type: organization
+            type: workflow_job_template
+      scm_branch: null
+      skip_tags: null
+      unified_job_template:
+        name: Deploy common Azure resources
+        organization:
+          name: ACME
+          type: organization
+        type: job_template
+      verbosity: null
+      workflow_job_template:
+        name: Deploy Web Farm
+        organization:
+          name: ACME
+          type: organization
+        type: workflow_job_template
+    - all_parents_must_converge: false
+      diff_mode: null
+      extra_data:
+        role: webserver
+        vm_name: web01
+      identifier: Deploy Webserver 1 (301)
+      inventory: null
+      job_tags: null
+      job_type: null
+      limit: null
+      natural_key:
+        identifier: Deploy Webserver 1 (301)
+        type: workflow_job_template_node
+        workflow_job_template:
+          name: Deploy Web Farm
+          organization:
+            name: ACME
+            type: organization
+          type: workflow_job_template
+      related:
+        always_nodes: []
+        credentials: []
+        failure_nodes: []
+        success_nodes:
+        - identifier: Refresh Inventory (401)
+          type: workflow_job_template_node
+          workflow_job_template:
+            name: Deploy Web Farm
+            organization:
+              name: ACME
+              type: organization
+            type: workflow_job_template
+      scm_branch: null
+      skip_tags: null
+      unified_job_template:
+        name: Deploy Linux VM in Azure
+        organization:
+          name: ACME
+          type: organization
+        type: job_template
+      verbosity: null
+      workflow_job_template:
+        name: Deploy Web Farm
+        organization:
+          name: ACME
+          type: organization
+        type: workflow_job_template
+    - all_parents_must_converge: false
+      diff_mode: null
+      extra_data:
+        role: webserver
+        vm_name: web02
+      identifier: Deploy Webserver 2 (302)
+      inventory: null
+      job_tags: null
+      job_type: null
+      limit: null
+      natural_key:
+        identifier: Deploy Webserver 2 (302)
+        type: workflow_job_template_node
+        workflow_job_template:
+          name: Deploy Web Farm
+          organization:
+            name: ACME
+            type: organization
+          type: workflow_job_template
+      related:
+        always_nodes: []
+        credentials: []
+        failure_nodes: []
+        success_nodes:
+        - identifier: Refresh Inventory (401)
+          type: workflow_job_template_node
+          workflow_job_template:
+            name: Deploy Web Farm
+            organization:
+              name: ACME
+              type: organization
+            type: workflow_job_template
+      scm_branch: null
+      skip_tags: null
+      unified_job_template:
+        name: Deploy Linux VM in Azure
+        organization:
+          name: ACME
+          type: organization
+        type: job_template
+      verbosity: null
+      workflow_job_template:
+        name: Deploy Web Farm
+        organization:
+          name: ACME
+          type: organization
+        type: workflow_job_template
+    - all_parents_must_converge: false
+      diff_mode: null
+      extra_data:
+        role: dbserver
+        vm_name: db01
+      identifier: Deploy Load Balancer (303)
+      inventory: null
+      job_tags: null
+      job_type: null
+      limit: null
+      natural_key:
+        identifier: Deploy Load Balancer (303)
+        type: workflow_job_template_node
+        workflow_job_template:
+          name: Deploy Web Farm
+          organization:
+            name: ACME
+            type: organization
+          type: workflow_job_template
+      related:
+        always_nodes: []
+        credentials: []
+        failure_nodes: []
+        success_nodes:
+        - identifier: Refresh Inventory (401)
+          type: workflow_job_template_node
+          workflow_job_template:
+            name: Deploy Web Farm
+            organization:
+              name: ACME
+              type: organization
+            type: workflow_job_template
+      scm_branch: null
+      skip_tags: null
+      unified_job_template:
+        name: Deploy Linux VM in Azure
+        organization:
+          name: ACME
+          type: organization
+        type: job_template
+      verbosity: null
+      workflow_job_template:
+        name: Deploy Web Farm
+        organization:
+          name: ACME
+          type: organization
+        type: workflow_job_template
+    - all_parents_must_converge: false
+      diff_mode: null
+      extra_data:
+        role: lbserver
+        vm_name: lb01
+      identifier: Deploy Database Server (304)
+      inventory: null
+      job_tags: null
+      job_type: null
+      limit: null
+      natural_key:
+        identifier: Deploy Database Server (304)
+        type: workflow_job_template_node
+        workflow_job_template:
+          name: Deploy Web Farm
+          organization:
+            name: ACME
+            type: organization
+          type: workflow_job_template
+      related:
+        always_nodes: []
+        credentials: []
+        failure_nodes: []
+        success_nodes:
+        - identifier: Refresh Inventory (401)
+          type: workflow_job_template_node
+          workflow_job_template:
+            name: Deploy Web Farm
+            organization:
+              name: ACME
+              type: organization
+            type: workflow_job_template
+      scm_branch: null
+      skip_tags: null
+      unified_job_template:
+        name: Deploy Linux VM in Azure
+        organization:
+          name: ACME
+          type: organization
+        type: job_template
+      verbosity: null
+      workflow_job_template:
+        name: Deploy Web Farm
+        organization:
+          name: ACME
+          type: organization
+        type: workflow_job_template
+    - all_parents_must_converge: true
+      diff_mode: null
+      extra_data: {}
+      identifier: Refresh Inventory (401)
+      inventory: null
+      job_tags: null
+      job_type: null
+      limit: null
+      natural_key:
+        identifier: Refresh Inventory (401)
+        type: workflow_job_template_node
+        workflow_job_template:
+          name: Deploy Web Farm
+          organization:
+            name: ACME
+            type: organization
+          type: workflow_job_template
+      related:
+        always_nodes: []
+        credentials: []
+        failure_nodes: []
+        success_nodes:
+        - identifier: Install Linux Baseline (501)
+          type: workflow_job_template_node
+          workflow_job_template:
+            name: Deploy Web Farm
+            organization:
+              name: ACME
+              type: organization
+            type: workflow_job_template
+      scm_branch: null
+      skip_tags: null
+      unified_job_template:
+        inventory:
+          name: Cloud
+          organization:
+            name: ACME
+            type: organization
+          type: inventory
+        name: Azure
+        type: inventory_source
+      verbosity: null
+      workflow_job_template:
+        name: Deploy Web Farm
+        organization:
+          name: ACME
+          type: organization
+        type: workflow_job_template
+    - all_parents_must_converge: false
+      diff_mode: null
+      extra_data: {}
+      identifier: Install Linux Baseline (501)
+      inventory: null
+      job_tags: null
+      job_type: null
+      limit: null
+      natural_key:
+        identifier: Install Linux Baseline (501)
+        type: workflow_job_template_node
+        workflow_job_template:
+          name: Deploy Web Farm
+          organization:
+            name: ACME
+            type: organization
+          type: workflow_job_template
+      related:
+        always_nodes: []
+        credentials: []
+        failure_nodes: []
+        success_nodes:
+        - identifier: Install DB Server (601)
+          type: workflow_job_template_node
+          workflow_job_template:
+            name: Deploy Web Farm
+            organization:
+              name: ACME
+              type: organization
+            type: workflow_job_template
+        - identifier: Install Load Balancer (602)
+          type: workflow_job_template_node
+          workflow_job_template:
+            name: Deploy Web Farm
+            organization:
+              name: ACME
+              type: organization
+            type: workflow_job_template
+        - identifier: Install Web Server (603)
+          type: workflow_job_template_node
+          workflow_job_template:
+            name: Deploy Web Farm
+            organization:
+              name: ACME
+              type: organization
+            type: workflow_job_template
+      scm_branch: null
+      skip_tags: null
+      unified_job_template:
+        name: Install Linux Baseline
+        organization:
+          name: ACME
+          type: organization
+        type: job_template
+      verbosity: null
+      workflow_job_template:
+        name: Deploy Web Farm
+        organization:
+          name: ACME
+          type: organization
+        type: workflow_job_template
+    - all_parents_must_converge: false
+      diff_mode: null
+      extra_data: {}
+      identifier: Install DB Server (601)
+      inventory: null
+      job_tags: null
+      job_type: null
+      limit: null
+      natural_key:
+        identifier: Install DB Server (601)
+        type: workflow_job_template_node
+        workflow_job_template:
+          name: Deploy Web Farm
+          organization:
+            name: ACME
+            type: organization
+          type: workflow_job_template
+      related:
+        always_nodes: []
+        credentials: []
+        failure_nodes: []
+        success_nodes: []
+      scm_branch: null
+      skip_tags: null
+      unified_job_template:
+        name: Install DB Server
+        organization:
+          name: ACME
+          type: organization
+        type: job_template
+      verbosity: null
+      workflow_job_template:
+        name: Deploy Web Farm
+        organization:
+          name: ACME
+          type: organization
+        type: workflow_job_template
+    - all_parents_must_converge: false
+      diff_mode: null
+      extra_data: {}
+      identifier: Install Load Balancer (602)
+      inventory: null
+      job_tags: null
+      job_type: null
+      limit: null
+      natural_key:
+        identifier: Install Load Balancer (602)
+        type: workflow_job_template_node
+        workflow_job_template:
+          name: Deploy Web Farm
+          organization:
+            name: ACME
+            type: organization
+          type: workflow_job_template
+      related:
+        always_nodes: []
+        credentials: []
+        failure_nodes: []
+        success_nodes: []
+      scm_branch: null
+      skip_tags: null
+      unified_job_template:
+        name: Install Load Balancer
+        organization:
+          name: ACME
+          type: organization
+        type: job_template
+      verbosity: null
+      workflow_job_template:
+        name: Deploy Web Farm
+        organization:
+          name: ACME
+          type: organization
+        type: workflow_job_template
+    - all_parents_must_converge: false
+      diff_mode: null
+      extra_data: {}
+      identifier: Install Web Server (603)
+      inventory: null
+      job_tags: null
+      job_type: null
+      limit: null
+      natural_key:
+        identifier: Install Web Server (603)
+        type: workflow_job_template_node
+        workflow_job_template:
+          name: Deploy Web Farm
+          organization:
+            name: ACME
+            type: organization
+          type: workflow_job_template
+      related:
+        always_nodes: []
+        credentials: []
+        failure_nodes: []
+        success_nodes:
+        - identifier: Deploy Web Site (701)
+          type: workflow_job_template_node
+          workflow_job_template:
+            name: Deploy Web Farm
+            organization:
+              name: ACME
+              type: organization
+            type: workflow_job_template
+      scm_branch: null
+      skip_tags: null
+      unified_job_template:
+        name: Install Web Server
+        organization:
+          name: ACME
+          type: organization
+        type: job_template
+      verbosity: null
+      workflow_job_template:
+        name: Deploy Web Farm
+        organization:
+          name: ACME
+          type: organization
+        type: workflow_job_template
+    - all_parents_must_converge: false
+      diff_mode: null
+      extra_data: {}
+      identifier: Deploy Web Site (701)
+      inventory: null
+      job_tags: null
+      job_type: null
+      limit: null
+      natural_key:
+        identifier: Deploy Web Site (701)
+        type: workflow_job_template_node
+        workflow_job_template:
+          name: Deploy Web Farm
+          organization:
+            name: ACME
+            type: organization
+          type: workflow_job_template
+      related:
+        always_nodes: []
+        credentials: []
+        failure_nodes: []
+        success_nodes: []
+      scm_branch: null
+      skip_tags: null
+      unified_job_template:
+        name: Deploy Web site
+        organization:
+          name: ACME
+          type: organization
+        type: job_template
+      verbosity: null
+      workflow_job_template:
+        name: Deploy Web Farm
+        organization:
+          name: ACME
+          type: organization
+        type: workflow_job_template
+  scm_branch: null
+  survey_enabled: true
+  webhook_credential: null
+  webhook_service: ''
+
